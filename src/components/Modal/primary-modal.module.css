@@ -1,0 +1,7 @@
+.hui-primary-modal {
+    background-color: white;
+    border-radius: 8px;
+    max-width: var(--modal-max-width);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}

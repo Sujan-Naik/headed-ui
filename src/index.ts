@@ -1,0 +1,11 @@
+export {PrimaryButton} from '@/components/Button/primary-button';
+export {PrimaryAccordion} from '@/components/Accordion/primary-accordion';
+export {PrimaryCard} from '@/components/Card/primary-card';
+export {PrimaryDialog} from '@/components/Dialog/primary-dialog';
+export {PrimaryDropdown} from '@/components/Dropdown/primary-dropdown';
+export {PrimaryLink} from '@/components/Link/primary-link';
+export {PrimaryModal} from '@/components/Modal/primary-modal';
+export {PrimaryPopover} from '@/components/Popover/primary-popover';
+export {PrimarySelect} from '@/components/Select/primary-select';
+// export { PrimarySwitch } from '@/components/Switch/primary-switch';
+export {PrimaryTabs} from '@/components/Tabs/primary-tabs';

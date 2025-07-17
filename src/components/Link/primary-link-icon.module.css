@@ -1,0 +1,31 @@
+/* LinkIcon Styles */
+.link-icon {
+    display: inline-flex;
+    align-items: center; /* Align icons vertically */
+    color: var(--link-color);
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.link-icon:hover {
+    color: var(--foreground-secondary); /* Change color on hover */
+}
+
+.link-icon img, /* If using an image as an icon */
+.link-icon svg { /* If using an SVG as an icon */
+    width: var(--link-icon-size);
+    height: var(--link-icon-size);
+}
+
+
+/* Additional Styles if LinkIcon includes a text component */
+.link-icon-text {
+    margin-left: 0.5rem; /* Space between icon and text */
+    font-weight: 500; /* Slightly bolder text */
+}
+
+/* Responsive Considerations */
+@media (max-width: 768px) {
+    .link-icon {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}

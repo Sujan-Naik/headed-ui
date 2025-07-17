@@ -1,0 +1,49 @@
+.hui-primary-accordion {
+    background-color: var(--background-secondary); /* Soft sky blue */
+    padding: var(--accordion-padding);
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for more depth */
+    width: 100%; /* Occupies full width */
+    margin-bottom: 1rem; /* Space below each accordion for separation */
+    transition: box-shadow 0.3s ease, transform 0.3s; /* Heavy metal transitions */
+}
+
+.hui-primary-accordion:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.accordion-arrow {
+    font-size: 1.5rem; /* Larger font size */
+    color: var(--foreground-secondary); /* Use your theme color */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    margin-left: 10px; /* Space between title and arrow */
+    display: inline-block; /* Ensure it is treated as a block for padding */
+    line-height: 1; /* Adjust line height for vertical centering */
+}
+
+.hui-primary-accordion-title:hover .accordion-arrow {
+    color: var(--foreground-secondary); /* Change color on hover for better visibility */
+}
+
+.hui-primary-accordion-title {
+    display: flex; /* Allow flexbox for better alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between title and arrow */
+}
+
+.hui-primary-accordion-title:hover {
+    color: #FFF; /* Change text color on hover for contrast */
+    transform: scale(1.02); /* Slightly scale up on hover for emphasis */
+}
+
+.hui-primary-accordion-content {
+    padding: var(--accordion-padding);
+    overflow: hidden; /* Prevent overflow */
+    transition: max-height 0.5s ease-in-out; /* Smooth opening/closing transition */
+}
+
+/* Show the content when opened */
+.hui-primary-accordion.open .hui-primary-accordion-content {
+    max-height: 500px; /* Arbitrary large value for smooth expanding effect */
+}

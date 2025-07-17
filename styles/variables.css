@@ -1,0 +1,24 @@
+:root {
+
+    /* Background and foreground for primary UI elements */
+    --background-primary: #0C56BC;
+    --foreground-primary: #A4C3D2;
+
+    /* Background and foreground for secondary UI elements (cards, etc.) */
+    --background-secondary: #0643A5;
+    --foreground-secondary: #AECBD6;
+
+    /* For headings, accent colors */
+    --background-tertiary: #00308F;
+    --foreground-tertiary: #BFD4DB;
+
+    --border-color: #000019;
+
+    --modal-max-width: 800px; /* Max width for modals */
+    --modal-min-width: 400px; /* Min width for modals */
+    --button-padding: 0.5rem 1rem; /* Padding for buttons */
+    --accordion-padding: 0.75rem; /* Padding for accordion */
+    --tab-height: 50px; /* Height for tabs */
+    --link-color: var(--foreground-primary); /* Color for links */
+    --link-icon-size: 4px; /* Standard size for link icons */
+}
