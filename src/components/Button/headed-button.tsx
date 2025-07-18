@@ -8,7 +8,7 @@ interface ButtonProps {
     className?: string;
 }
 
-export const PrimaryButton: React.FC<ButtonProps> = ({children, onClick, className = ''}) => {
+export const HeadedButton: React.FC<ButtonProps> = ({children, onClick, className = ''}) => {
     return (
         <Button
             onClick={onClick}

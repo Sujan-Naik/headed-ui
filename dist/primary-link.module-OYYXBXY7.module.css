@@ -1,0 +1,37 @@
+/*.link {*/
+/*    color: var(--link-color);*/
+/*    text-decoration: none; !* Remove underline *!*/
+/*    transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease; !* Smooth color and transform on hover *!*/
+/*    font-weight: 500; !* Slightly increase font weight *!*/
+/*    position: relative; !* Position for pseudo-elements *!*/
+/*}*/
+
+/*.link:hover {*/
+/*    color: var(--foreground-secondary); !* Color on hover *!*/
+/*    background-color: rgba(0, 0, 0, 0.1); !* Light background on hover *!*/
+/*    transform: translateY(-2px); !* Slight lift on hover *!*/
+/*}*/
+
+/*!* Add underline on hover (optional) *!*/
+/*.link::after {*/
+/*    content: '';*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    height: 2px; !* Height of your underline *!*/
+/*    background-color: var(--foreground-secondary); !* Color for underline *!*/
+/*    position: absolute; !* Position at the bottom *!*/
+/*    left: 0; !* Align to the left *!*/
+/*    bottom: -2px; !* Position below text *!*/
+/*    transform: scaleX(0); !* Hidden initially *!*/
+/*    transition: transform 0.3s ease; !* Smooth scale transition *!*/
+/*}*/
+
+/*.link:hover::after {*/
+/*    transform: scaleX(1); !* Scale to full width on hover *!*/
+/*}*/
+
+
+/*!* Responsive Considerations *!*/
+/*@media (max-width: 768px) {*/
+/*    .link*/
+/*}*/

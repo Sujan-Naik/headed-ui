@@ -8,7 +8,7 @@ interface PrimaryLinkProps extends LinkProps {
     onClick?: () => void; // Optional prop for additional click functionality
 }
 
-export const PrimaryLink: React.FC<PrimaryLinkProps> = ({
+export const HeadedLink: React.FC<PrimaryLinkProps> = ({
                                                             children,
                                                             className,
                                                             onClick,

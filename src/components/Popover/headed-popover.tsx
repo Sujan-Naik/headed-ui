@@ -6,7 +6,7 @@ interface PopoverProps {
     children: React.ReactNode;
 }
 
-export function PrimaryPopover({title, children}: PopoverProps) {
+export function HeadedPopover({title, children}: PopoverProps) {
     return (
         <Popover className="relative">
             <PopoverButton>{title}</PopoverButton>

@@ -8,7 +8,7 @@ interface DropdownProps {
     onChange: (value: string) => void;
 }
 
-export const PrimaryDropdown: React.FC<DropdownProps> = ({options, selected, onChange}) => {
+export const HeadedDropdown: React.FC<DropdownProps> = ({options, selected, onChange}) => {
     return (
         <Listbox value={selected} onChange={onChange}>
             <div className="relative">

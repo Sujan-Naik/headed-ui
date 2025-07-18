@@ -1,6 +1,6 @@
 import {Description, Field, Select} from '@headlessui/react'
 import React, {ChangeEventHandler} from "react";
-import {PrimaryCard} from "@/index"
+import {HeadedCard} from "@/index"
 
 
 interface SelectProps {
@@ -10,9 +10,9 @@ interface SelectProps {
 }
 
 
-export const PrimarySelect: React.FC<SelectProps> = ({options, description, onChange}) => {
+export const HeadedSelect: React.FC<SelectProps> = ({options, description, onChange}) => {
     return (
-        <PrimaryCard>
+        <HeadedCard>
 
 
             <Field>
@@ -25,7 +25,7 @@ export const PrimarySelect: React.FC<SelectProps> = ({options, description, onCh
                     ))}
                 </Select>
             </Field>
-        </PrimaryCard>
+        </HeadedCard>
 
     )
 }

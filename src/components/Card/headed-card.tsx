@@ -7,7 +7,7 @@ interface PrimaryCardProps {
     children: React.ReactNode;
 }
 
-export const PrimaryCard: React.FC<PrimaryCardProps> = ({width, height, children}) => {
+export const HeadedCard: React.FC<PrimaryCardProps> = ({width, height, children}) => {
     return (
         <div
             className={styles['hui-primary-card']}

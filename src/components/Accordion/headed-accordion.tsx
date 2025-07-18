@@ -25,6 +25,6 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({title, children}) =
     </Disclosure>
 );
 
-export const PrimaryAccordion: React.FC<{ children: React.ReactNode }> = ({children}) => {
+export const HeadedAccordion: React.FC<{ children: React.ReactNode }> = ({children}) => {
     return <div>{children}</div>;
 };

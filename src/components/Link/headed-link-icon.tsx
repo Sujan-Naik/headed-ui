@@ -7,7 +7,7 @@ interface PrimaryLinkIconProps {
     onClick?: () => void; // Optional click handler
 }
 
-const PrimaryLinkIcon: React.FC<PrimaryLinkIconProps> = ({icon, className, onClick}) => {
+const HeadedLinkIcon: React.FC<PrimaryLinkIconProps> = ({icon, className, onClick}) => {
     return (
         <span
             className={`${styles.linkIcon} ${className ?? ''}`}
@@ -18,4 +18,4 @@ const PrimaryLinkIcon: React.FC<PrimaryLinkIconProps> = ({icon, className, onCli
     );
 };
 
-export default PrimaryLinkIcon;
+export default HeadedLinkIcon;

@@ -8,7 +8,7 @@ interface PrimarySwitchProps {
     children: React.ReactNode;
 }
 
-const PrimarySwitch: React.FC<PrimarySwitchProps> = ({children}) => {
+const HeadedSwitch: React.FC<PrimarySwitchProps> = ({children}) => {
     const [enabled, setEnabled] = useState(true)
 
     return (
@@ -45,4 +45,4 @@ const PrimarySwitch: React.FC<PrimarySwitchProps> = ({children}) => {
     )
 }
 
-export default PrimarySwitch;
+export default HeadedSwitch;

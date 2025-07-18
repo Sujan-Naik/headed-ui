@@ -8,7 +8,7 @@ interface TabsProps {
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const PrimaryTabs: React.FC<TabsProps> = ({tabs, children, onClick}) => {
+export const HeadedTabs: React.FC<TabsProps> = ({tabs, children, onClick}) => {
     return (
         <TabGroup>
             <TabList className={styles['hui-primary-tabs']}>
