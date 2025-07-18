@@ -1,4 +1,5 @@
 import {defineConfig} from "tsup";
+import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
     entry: ["src/index.ts"],
@@ -9,7 +10,5 @@ export default defineConfig({
     clean: true,
     outDir: 'dist',
     loader: {
-        '.css': 'css',
-        '.module.css': 'css',   // handle CSS modules
-    },
+        '.css': 'copy'},
 });

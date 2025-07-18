@@ -33,17 +33,13 @@ var __objRest = (source, exclude) => {
 // src/components/Button/primary-button.tsx
 import { Button } from "@headlessui/react";
 import React2 from "react";
-
-// src/components/Button/primary-button.module.css
-var primary_button_default = {};
-
-// src/components/Button/primary-button.tsx
+import styles from "./primary-button.module-DVI32LFC.module.css";
 var PrimaryButton = ({ children, onClick, className = "" }) => {
   return /* @__PURE__ */ React2.createElement(
     Button,
     {
       onClick,
-      className: `${primary_button_default["primary-button"]} ${className}`
+      className: `${styles["hui-primary-button"]} ${className}`
     },
     children
   );
@@ -52,22 +48,19 @@ var PrimaryButton = ({ children, onClick, className = "" }) => {
 // src/components/Accordion/primary-accordion.tsx
 import React3 from "react";
 import { Disclosure } from "@headlessui/react";
+import styles2 from "./primary-accordion.module-ZC4IKGRB.module.css";
 var PrimaryAccordion = ({ children }) => {
   return /* @__PURE__ */ React3.createElement("div", null, children);
 };
 
 // src/components/Card/primary-card.tsx
 import React4 from "react";
-
-// src/components/Card/primary-card.module.css
-var primary_card_default = {};
-
-// src/components/Card/primary-card.tsx
+import styles3 from "./primary-card.module-AU5NXOQL.module.css";
 var PrimaryCard = ({ width, height, children }) => {
   return /* @__PURE__ */ React4.createElement(
     "div",
     {
-      className: primary_card_default["primary-card"],
+      className: styles3["hui-primary-card"],
       style: { width, height }
     },
     children
@@ -77,35 +70,23 @@ var PrimaryCard = ({ width, height, children }) => {
 // src/components/Dialog/primary-dialog.tsx
 import React5 from "react";
 import { Dialog } from "@headlessui/react";
-
-// src/components/Dialog/primary-dialog.module.css
-var primary_dialog_default = {};
-
-// src/components/Dialog/primary-dialog.tsx
+import styles4 from "./primary-dialog.module-BN6HABWZ.module.css";
 var PrimaryDialog = ({ isOpen, onClose, title, children }) => {
-  return /* @__PURE__ */ React5.createElement(Dialog, { open: isOpen, onClose, className: primary_dialog_default["primary-dialog"] }, /* @__PURE__ */ React5.createElement("div", { className: primary_dialog_default["primary-dialog-panel"] }, /* @__PURE__ */ React5.createElement(Dialog.Title, { className: primary_dialog_default["primary-dialog-title"] }, title), children, /* @__PURE__ */ React5.createElement("button", { onClick: onClose, className: primary_dialog_default["primary-button"] }, "Close")));
+  return /* @__PURE__ */ React5.createElement(Dialog, { open: isOpen, onClose, className: styles4["hui-primary-dialog"] }, /* @__PURE__ */ React5.createElement("div", { className: styles4["hui-primary-dialog-panel"] }, /* @__PURE__ */ React5.createElement(Dialog.Title, { className: styles4["hui-primary-dialog-title"] }, title), children, /* @__PURE__ */ React5.createElement(PrimaryButton, { onClick: onClose }, "Close")));
 };
 
 // src/components/Dropdown/primary-dropdown.tsx
 import React6, { Fragment } from "react";
 import { Listbox } from "@headlessui/react";
-
-// src/components/Dropdown/primary-dropdown.module.css
-var primary_dropdown_default = {};
-
-// src/components/Dropdown/primary-dropdown.tsx
+import styles5 from "./primary-dropdown.module-AZFYDIS2.module.css";
 var PrimaryDropdown = ({ options, selected, onChange }) => {
-  return /* @__PURE__ */ React6.createElement(Listbox, { value: selected, onChange }, /* @__PURE__ */ React6.createElement("div", { className: "relative" }, /* @__PURE__ */ React6.createElement(Listbox.Button, { className: primary_dropdown_default["primary-dropdown"] }, selected), /* @__PURE__ */ React6.createElement(Listbox.Options, { className: "absolute z-10" }, options.map((option) => /* @__PURE__ */ React6.createElement(Listbox.Option, { key: option, value: option, as: Fragment }, ({ focus }) => /* @__PURE__ */ React6.createElement("li", { className: `cursor-pointer ${focus ? "bg-gray-200" : ""}` }, option))))));
+  return /* @__PURE__ */ React6.createElement(Listbox, { value: selected, onChange }, /* @__PURE__ */ React6.createElement("div", { className: "relative" }, /* @__PURE__ */ React6.createElement(Listbox.Button, { className: styles5["hui-primary-dropdown"] }, selected), /* @__PURE__ */ React6.createElement(Listbox.Options, { className: "absolute z-10" }, options.map((option) => /* @__PURE__ */ React6.createElement(Listbox.Option, { key: option, value: option, as: Fragment }, ({ focus }) => /* @__PURE__ */ React6.createElement("li", { className: `cursor-pointer ${focus ? "bg-gray-200" : ""}` }, option))))));
 };
 
 // src/components/Link/primary-link.tsx
 import React7 from "react";
 import Link from "next/link";
-
-// src/components/Link/primary-link.module.css
-var primary_link_default = {};
-
-// src/components/Link/primary-link.tsx
+import styles6 from "./primary-link.module-OYYXBXY7.module.css";
 var PrimaryLink = (_a) => {
   var _b = _a, {
     children,
@@ -116,26 +97,22 @@ var PrimaryLink = (_a) => {
     "className",
     "onClick"
   ]);
-  return /* @__PURE__ */ React7.createElement(Link, __spreadProps(__spreadValues({}, props), { className: `${primary_link_default["link"]} ${className != null ? className : ""}`, onClick }), children);
+  return /* @__PURE__ */ React7.createElement(Link, __spreadProps(__spreadValues({}, props), { className: `${styles6.link} ${className != null ? className : ""}`, onClick }), children);
 };
 
 // src/components/Modal/primary-modal.tsx
 import React8 from "react";
 import { Dialog as Dialog2 } from "@headlessui/react";
-
-// src/components/Modal/primary-modal.module.css
-var primary_modal_default = {};
-
-// src/components/Modal/primary-modal.tsx
+import styles7 from "./primary-modal.module-4VYPWT3G.module.css";
 var PrimaryModal = ({ isOpen, onClose, title, children }) => {
   return /* @__PURE__ */ React8.createElement(
     Dialog2,
     {
       open: isOpen,
       onClose,
-      className: `fixed inset-0 z-10 overflow-y-auto ${primary_modal_default["primary-modal"]}`
+      className: `fixed inset-0 z-10 overflow-y-auto ${styles7["hui-primary-modal"]}`
     },
-    /* @__PURE__ */ React8.createElement("div", { className: "modal-content" }, /* @__PURE__ */ React8.createElement(Dialog2.Title, null, title), /* @__PURE__ */ React8.createElement("div", null, children), /* @__PURE__ */ React8.createElement("button", { onClick: onClose, className: "custom-button" }, "Close"))
+    /* @__PURE__ */ React8.createElement("div", { className: "modal-content" }, /* @__PURE__ */ React8.createElement(Dialog2.Title, null, title), /* @__PURE__ */ React8.createElement("div", null, children), /* @__PURE__ */ React8.createElement(PrimaryButton, { onClick: onClose }, "Close"))
   );
 };
 
@@ -155,13 +132,9 @@ var PrimarySelect = ({ options, description, onChange }) => {
 // src/components/Tabs/primary-tabs.tsx
 import React10 from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-
-// src/components/Tabs/primary-tabs.module.css
-var primary_tabs_default = {};
-
-// src/components/Tabs/primary-tabs.tsx
+import styles8 from "./primary-tabs.module-QX4JWDZG.module.css";
 var PrimaryTabs = ({ tabs, children, onClick }) => {
-  return /* @__PURE__ */ React10.createElement(TabGroup, null, /* @__PURE__ */ React10.createElement(TabList, { className: primary_tabs_default["primary-tabs"] }, tabs.map((tab, index) => /* @__PURE__ */ React10.createElement(Tab, { key: index, className: primary_tabs_default["primary-tab"], onClick }, tab))), /* @__PURE__ */ React10.createElement(TabPanels, null, children.map((content, index) => /* @__PURE__ */ React10.createElement(TabPanel, { key: index, className: "tab-panel" }, content))));
+  return /* @__PURE__ */ React10.createElement(TabGroup, null, /* @__PURE__ */ React10.createElement(TabList, { className: styles8["hui-primary-tabs"] }, tabs.map((tab, index) => /* @__PURE__ */ React10.createElement(Tab, { key: index, className: styles8["hui-primary-tab"], onClick }, tab))), /* @__PURE__ */ React10.createElement(TabPanels, null, children.map((content, index) => /* @__PURE__ */ React10.createElement(TabPanel, { key: index, className: "tab-panel" }, content))));
 };
 export {
   PrimaryAccordion,
