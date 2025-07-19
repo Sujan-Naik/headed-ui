@@ -7,5 +7,5 @@ export {HeadedLink} from '@/components/Link/headed-link';
 export {HeadedModal} from '@/components/Modal/headed-modal';
 export {HeadedPopover} from '@/components/Popover/headed-popover';
 export {HeadedSelect} from '@/components/Select/headed-select';
-// export { HeadedSwitch } from '@/components/Switch/primary-switch';
+export { HeadedSwitch } from '@/components/Switch/headed-switch';
 export {HeadedTabs} from '@/components/Tabs/headed-tabs';

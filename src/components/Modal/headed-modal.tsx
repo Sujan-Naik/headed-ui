@@ -1,23 +1,24 @@
 import React from 'react';
-import {Dialog} from '@headlessui/react';
+import { Dialog } from '@headlessui/react';
 import styles from './headed-modal.module.css';
-import {HeadedButton} from "@/components/Button/headed-button";
+import { HeadedButton } from "@/components/Button/headed-button";
+import { VariantEnum } from '../variants';
 
-interface ModalProps {
+interface HeadedModalProps {
     isOpen: boolean;
     onClose: () => void;
     title: string;
+    variant: VariantEnum;
     children: React.ReactNode;
 }
 
-export const HeadedModal: React.FC<ModalProps> = ({isOpen, onClose, title, children}) => {
+export const HeadedModal: React.FC<HeadedModalProps> = ({isOpen, onClose, title, children, variant}) => {
     return (
-        <Dialog open={isOpen} onClose={onClose}
-                className={`fixed inset-0 z-10 overflow-y-auto ${styles['hui-primary-modal']}`}>
-            <div className="modal-content">
-                <Dialog.Title>{title}</Dialog.Title>
-                <div>{children}</div>
-                <HeadedButton onClick={onClose}>Close</HeadedButton>
+        <Dialog open={isOpen} onClose={onClose} className={styles[`hui-${variant}-modal`]}>
+            <div className={styles[`hui-${variant}-modal-panel`]}>
+                <Dialog.Title className={styles[`hui-${variant}-modal-title`]}>{title}</Dialog.Title>
+                {children}
+                <HeadedButton variant={variant} onClick={onClose}>Close</HeadedButton>
             </div>
         </Dialog>
     );

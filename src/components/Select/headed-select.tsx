@@ -1,23 +1,24 @@
-import {Description, Field, Select} from '@headlessui/react'
-import React, {ChangeEventHandler} from "react";
-import {HeadedCard} from "@/index"
+import {Description, Field, Label, Select} from '@headlessui/react';
+import React, { ChangeEventHandler } from 'react';
+import { HeadedCard } from '@/index';
+import { VariantEnum } from '../variants';
+import styles from "./headed-select.module.css";
 
-
-interface SelectProps {
+interface HeadedSelectProps {
     options: string[];
+    label: string;
     description: string;
     onChange: ChangeEventHandler<HTMLSelectElement>;
+    variant: VariantEnum;
 }
 
-
-export const HeadedSelect: React.FC<SelectProps> = ({options, description, onChange}) => {
+export const HeadedSelect: React.FC<HeadedSelectProps> = ({ options, label, description, onChange, variant }) => {
     return (
-        <HeadedCard>
-
-
+        <HeadedCard variant={variant}>
             <Field>
-                <Description>{description}</Description>
-                <Select name="status" aria-label="Project status" onChange={onChange}>
+                <Label>{label}</Label>
+                <Description className={`${styles[`hui-${variant}-description`]}`}>{description}</Description>
+                <Select className={`${styles[`hui-${variant}-select`]}`} name="status" aria-label="Project status" onChange={onChange}>
                     {options.map((option) => (
                         <option key={option} value={option}>
                             {option}
@@ -26,6 +27,5 @@ export const HeadedSelect: React.FC<SelectProps> = ({options, description, onCha
                 </Select>
             </Field>
         </HeadedCard>
-
-    )
-}
+    );
+};

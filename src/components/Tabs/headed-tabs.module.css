@@ -1,14 +1,98 @@
-.hui-primary-tabs {
+.hui-base-tabs{
     display: flex;
-    border-bottom: 2px solid var(--foreground-primary); /* Bright blue border */
+    border-bottom: 3px solid var(--border-color);
+    background-color: var(--base-background);
 }
 
-.hui-primary-tab {
+
+.hui-primary-tabs {
+    composes: hui-base-tabs;
+    color: var(--foreground-primary);
+}
+
+.hui-secondary-tabs {
+    composes: hui-base-tabs;
+    color: var(--foreground-secondary);
+}
+
+
+.hui-tertiary-tabs {
+    composes: hui-base-tabs;
+    color: var(--foreground-tertiary);
+}
+
+.hui-outline-tabs {
+    composes: hui-base-tabs;
+}
+
+
+.hui-base-tab {
     padding: var(--button-padding);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+}
+.hui-primary-tab {
+    composes: hui-base-tab;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
 }
 
 .hui-primary-tab:hover {
-    background-color: var(--foreground-tertiary); /* Bold sky blue on hover */
+    background-color: var(--hover);
 }
+
+
+.hui-secondary-tab {
+    composes: hui-base-tab;
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+}
+
+.hui-secondary-tab:hover {
+    background-color: var(--hover);
+}
+
+.hui-tertiary-tab {
+    composes: hui-base-tab;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-tertiary);
+}
+
+.hui-tertiary-tab:hover {
+    background-color: var(--hover);
+}
+
+.hui-outline-tab {
+    composes: hui-base-tab;
+    background-color: transparent;
+    color: var(--foreground-primary);
+}
+
+.hui-outline-tab:hover {
+    border-color: var(--hover);
+}
+
+.hui-base-panel{
+
+}
+
+.hui-primary-panel{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

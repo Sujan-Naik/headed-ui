@@ -1,37 +1,27 @@
-.hui-primary-dialog {
-    background-color: var(--background-primary); /* Soft sky blue */
+.hui-base-dialog {
+    background-color: var(--base-background);
     border-radius: 8px;
-    max-width: var(--modal-max-width);
-    min-width: var(--modal-min-width);
-    width: 80vw;
-    padding: 20px;
-    position: fixed; /* Keep it fixed on the screen */
-    top: 50%; /* Position it in the vertical center */
-    left: 50%; /* Position it in the horizontal center */
-    transform: translate(-50%, -50%); /* Offset it by half its own width and height */
-    height: 80vh;
-    display: flex;
-    justify-items: center;
-    justify-content: center;
-    z-index: 10;
+    /*max-width: var(--dialog-max-width);*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
 }
 
-/* Primary Dialog Panel Styles */
-.hui-primary-dialog-panel {
-    background-color: var(--background-primary); /* Background color for the panel */
-    border-radius: 8px; /* Rounded corners */
-    max-width: var(--modal-max-width); /* Use your defined max width */
-    width: 100%; /* Ensure it uses most of the width available, responsive */
-    height: 100%; /* Allow it to grow based on content */
-    max-height: 80vh; /* Maximum height */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack child elements vertically */
-    position: relative; /* Make position relative for absolute child elements */
-    z-index: 20; /* Ensure it appears above backdrop */
-    text-align: center;
+.hui-primary-dialog {
+    composes: hui-base-dialog;
 }
 
-.hui-primary-dialog-title {
-    text-align: center;
+.hui-secondary-dialog {
+    composes: hui-base-dialog;
+}
+
+.hui-tertiary-dialog {
+    composes: hui-base-dialog;
+}
+
+.hui-outline-dialog {
+    background-color: transparent;
+    border-radius: 8px;
+    /*max-width: var(--dialog-max-width);*/
+    box-shadow: none;
+    padding: 2rem;
 }

@@ -1,29 +1,28 @@
-import React, {Fragment} from 'react';
-import {Listbox} from '@headlessui/react';
+import React, { Fragment } from 'react';
+import {Listbox, ListboxButton, ListboxOption, ListboxOptions} from '@headlessui/react';
 import styles from './headed-dropdown.module.css';
+import { VariantEnum } from '../variants';
 
-interface DropdownProps {
+interface HeadedDropdownProps {
     options: string[];
     selected: string;
     onChange: (value: string) => void;
+    variant: VariantEnum;
+    horizontal?: boolean;
 }
 
-export const HeadedDropdown: React.FC<DropdownProps> = ({options, selected, onChange}) => {
+export const HeadedDropdown: React.FC<HeadedDropdownProps> = ({ options, horizontal, selected, onChange, variant }) => {
     return (
-        <Listbox value={selected} onChange={onChange}>
+        <Listbox horizontal={horizontal} value={selected} onChange={onChange}>
             <div className="relative">
-                <Listbox.Button className={styles['hui-primary-dropdown']}>{selected}</Listbox.Button>
-                <Listbox.Options className="absolute z-10">
+                <ListboxButton className={styles[`hui-${variant}-dropdown-button`]}>{selected}</ListboxButton>
+                <ListboxOptions className="absolute z-10">
                     {options.map((option) => (
-                        <Listbox.Option key={option} value={option} as={Fragment}>
-                            {({focus}) => (
-                                <li className={`cursor-pointer ${focus ? 'bg-gray-200' : ''}`}>
-                                    {option}
-                                </li>
-                            )}
-                        </Listbox.Option>
+                        <ListboxOption key={option} value={option} className={styles[`hui-${variant}-dropdown-option`]}>
+                            {option}
+                        </ListboxOption>
                     ))}
-                </Listbox.Options>
+                </ListboxOptions>
             </div>
         </Listbox>
     );

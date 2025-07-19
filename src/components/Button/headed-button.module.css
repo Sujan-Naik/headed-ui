@@ -1,59 +1,48 @@
-.hui-primary-button {
-    background-color: var(--background-primary); /* Turquoise main color */
-    color: var(--foreground-primary);
-    border: 1vw solid var(--border-color);
-    border-radius: 4px;
+.hui-base-button {
+    border: 5px solid var(--border-color);
+    border-radius: 100px;
     padding: var(--button-padding);
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.hui-primary-button {
+    composes: hui-base-button;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
 }
 
 .hui-primary-button:hover {
-    background-color: var(--background-primary); /* Bright blue for hover */
+    background-color: var(--hover);
 }
 
 .hui-secondary-button {
+    composes: hui-base-button;
     background-color: var(--background-secondary);
     color: var(--foreground-secondary);
-    border: 1vw solid var(--border-color);
-    border-radius: 4px;
-    padding: var(--button-padding);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .hui-secondary-button:hover {
-    background-color: var(--background-secondary);
+    background-color: var(--hover);
 }
 
 .hui-tertiary-button {
+    composes: hui-base-button;
     background-color: var(--background-tertiary);
     color: var(--foreground-tertiary);
-    border: 1vw solid var(--border-color);
-    border-radius: 4px;
-    padding: var(--button-padding);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .hui-tertiary-button:hover {
-    background-color: var(--background-tertiary);
+    background-color: var(--hover);
 }
 
 .hui-outline-button {
+    composes: hui-base-button;
     background-color: transparent;
     color: var(--foreground-primary);
-    border: 1vw solid var(--border-color);
-    border-radius: 4px;
-    padding: var(--button-padding);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .hui-outline-button:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* subtle hover effect */
+    background-color: rgba(0, 0, 0, 0.05);
 }
