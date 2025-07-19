@@ -1,5 +1,5 @@
 .hui-primary-dialog {
-    background-color: var(--background-secondary); /* Soft sky blue */
+    background-color: var(--background-primary); /* Soft sky blue */
     border-radius: 8px;
     max-width: var(--modal-max-width);
     min-width: var(--modal-min-width);
@@ -18,7 +18,7 @@
 
 /* Primary Dialog Panel Styles */
 .hui-primary-dialog-panel {
-    background-color: var(--background-secondary); /* Background color for the panel */
+    background-color: var(--background-primary); /* Background color for the panel */
     border-radius: 8px; /* Rounded corners */
     max-width: var(--modal-max-width); /* Use your defined max width */
     width: 100%; /* Ensure it uses most of the width available, responsive */

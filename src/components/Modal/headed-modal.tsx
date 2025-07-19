@@ -1,6 +1,6 @@
 import React from 'react';
 import {Dialog} from '@headlessui/react';
-import styles from './primary-modal.module.css';
+import styles from './headed-modal.module.css';
 import {HeadedButton} from "@/components/Button/headed-button";
 
 interface ModalProps {

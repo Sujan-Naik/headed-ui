@@ -1,6 +1,6 @@
 import React from 'react';
 import {Dialog} from '@headlessui/react';
-import styles from './primary-dialog.module.css';
+import styles from './headed-dialog.module.css';
 import {HeadedButton} from "@/components/Button/headed-button";
 
 interface DialogProps {

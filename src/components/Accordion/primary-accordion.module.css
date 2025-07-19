@@ -1,5 +1,5 @@
 .hui-primary-accordion {
-    background-color: var(--background-secondary); /* Soft sky blue */
+    background-color: var(--background-primary); /* Soft sky blue */
     padding: var(--accordion-padding);
     border-radius: 10px; /* Slightly more rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for more depth */
@@ -15,7 +15,7 @@
 
 .accordion-arrow {
     font-size: 1.5rem; /* Larger font size */
-    color: var(--foreground-secondary); /* Use your theme color */
+    color: var(--foreground-primary); /* Use your theme color */
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
     margin-left: 10px; /* Space between title and arrow */
     display: inline-block; /* Ensure it is treated as a block for padding */
@@ -23,7 +23,7 @@
 }
 
 .hui-primary-accordion-title:hover .accordion-arrow {
-    color: var(--foreground-secondary); /* Change color on hover for better visibility */
+    color: var(--foreground-primary); /* Change color on hover for better visibility */
 }
 
 .hui-primary-accordion-title {

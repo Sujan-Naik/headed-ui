@@ -1,6 +1,6 @@
 .hui-primary-tabs {
     display: flex;
-    border-bottom: 2px solid var(--foreground-secondary); /* Bright blue border */
+    border-bottom: 2px solid var(--foreground-primary); /* Bright blue border */
 }
 
 .hui-primary-tab {

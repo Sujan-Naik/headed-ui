@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {Listbox} from '@headlessui/react';
-import styles from './primary-dropdown.module.css';
+import styles from './headed-dropdown.module.css';
 
 interface DropdownProps {
     options: string[];

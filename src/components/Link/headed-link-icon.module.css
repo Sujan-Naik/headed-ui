@@ -7,7 +7,7 @@
 }
 
 .link-icon:hover {
-    color: var(--foreground-secondary); /* Change color on hover */
+    color: var(--foreground-primary); /* Change color on hover */
 }
 
 .link-icon img, /* If using an image as an icon */

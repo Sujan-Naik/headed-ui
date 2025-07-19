@@ -1,0 +1,59 @@
+.hui-primary-button {
+    background-color: var(--background-primary); /* Turquoise main color */
+    color: var(--foreground-primary);
+    border: 1vw solid var(--border-color);
+    border-radius: 4px;
+    padding: var(--button-padding);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hui-primary-button:hover {
+    background-color: var(--background-primary); /* Bright blue for hover */
+}
+
+.hui-secondary-button {
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+    border: 1vw solid var(--border-color);
+    border-radius: 4px;
+    padding: var(--button-padding);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hui-secondary-button:hover {
+    background-color: var(--background-secondary);
+}
+
+.hui-tertiary-button {
+    background-color: var(--background-tertiary);
+    color: var(--foreground-tertiary);
+    border: 1vw solid var(--border-color);
+    border-radius: 4px;
+    padding: var(--button-padding);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hui-tertiary-button:hover {
+    background-color: var(--background-tertiary);
+}
+
+.hui-outline-button {
+    background-color: transparent;
+    color: var(--foreground-primary);
+    border: 1vw solid var(--border-color);
+    border-radius: 4px;
+    padding: var(--button-padding);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hui-outline-button:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* subtle hover effect */
+}

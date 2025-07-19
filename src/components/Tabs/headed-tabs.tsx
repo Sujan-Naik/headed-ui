@@ -1,6 +1,6 @@
 import React, {MouseEventHandler} from 'react';
 import {Tab, TabGroup, TabList, TabPanel, TabPanels} from '@headlessui/react';
-import styles from './primary-tabs.module.css';
+import styles from './headed-tabs.module.css';
 
 interface TabsProps {
     tabs: string[];

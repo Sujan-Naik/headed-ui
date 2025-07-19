@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './primary-card.module.css';
+import styles from './headed-card.module.css';
 
 interface PrimaryCardProps {
     width?: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link, {LinkProps} from 'next/link';
-import styles from './primary-link.module.css';
+import styles from './headed-link.module.css';
 
 interface PrimaryLinkProps extends LinkProps {
     className?: string;

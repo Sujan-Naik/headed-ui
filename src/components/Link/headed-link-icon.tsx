@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './primary-link-icon.module.css';
+import styles from './headed-link-icon.module.css';
 
 interface PrimaryLinkIconProps {
     icon: React.ReactNode; // Accepts a React node for the icon
