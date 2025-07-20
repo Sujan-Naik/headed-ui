@@ -1,8 +1,8 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import styles from './headed-modal.module.css';
-import { HeadedButton } from "@/components/Button/headed-button";
-import { VariantEnum } from '../variants';
+import { HeadedButton } from "@/components/interactive/Button/headed-button";
+import { VariantEnum } from '../../variants';
 
 interface HeadedModalProps {
     isOpen: boolean;

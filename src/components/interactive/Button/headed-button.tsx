@@ -1,7 +1,7 @@
 import {Button} from '@headlessui/react';
 import React from 'react';
 import styles from './headed-button.module.css';
-import {VariantEnum} from '../variants'
+import {VariantEnum} from '../../variants'
 
 interface ButtonProps {
     children: React.ReactNode;

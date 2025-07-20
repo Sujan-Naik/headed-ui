@@ -1,7 +1,7 @@
 "use client"
 import { HeadedButton, HeadedAccordion, HeadedCard, HeadedDialog, HeadedDropdown, HeadedModal, HeadedPopover, HeadedSelect, HeadedSwitch, HeadedTabs } from "@/index"
 import { VariantEnum } from "@/components/variants"
-import { AccordionItem } from "@/components/Accordion/headed-accordion"
+import { AccordionItem } from "@/components/content/Accordion/headed-accordion"
 import {useState} from "react";
 
 export default function Home() {

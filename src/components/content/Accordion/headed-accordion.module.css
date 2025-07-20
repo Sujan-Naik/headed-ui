@@ -1,36 +1,29 @@
 .hui-base-accordion {
     padding: var(--accordion-padding);
+    border: 2px solid var(--border-color);
     border-radius: 10px;
     width: 100%;
     margin-bottom: 1rem;
-    transition: box-shadow 0.3s ease, transform 0.3s;
 }
 
 .hui-primary-accordion {
     composes: hui-base-accordion;
     background-color: var(--background-primary);
-    border: 2px solid var(--border-color);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .hui-secondary-accordion {
     composes: hui-base-accordion;
     background-color: var(--background-secondary);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hui-tertiary-accordion {
     composes: hui-base-accordion;
     background-color: var(--background-tertiary);
-    border: 1px dashed var(--border-color);
-    box-shadow: none;
 }
 
 .hui-outline-accordion {
     composes: hui-base-accordion;
     background-color: transparent;
-    border: 2px solid var(--border-color);
 }
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './headed-card.module.css';
-import { VariantEnum } from '../variants';
+import { VariantEnum } from '../../variants';
 
 interface HeadedCardProps {
     width?: string;

@@ -1,7 +1,7 @@
 import { Switch } from '@headlessui/react'
 import React from 'react'
 import styles from './headed-switch.module.css'
-import { VariantEnum } from '../variants'
+import { VariantEnum } from '../../variants'
 
 interface HeadedSwitchProps {
   checked: boolean

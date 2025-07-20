@@ -1,9 +1,9 @@
 import React from 'react';
 import {Dialog, DialogPanel} from '@headlessui/react';
 import styles from './headed-dialog.module.css';
-import { HeadedButton } from "@/components/Button/headed-button";
-import { VariantEnum } from '../variants';
-import {HeadedCard} from "@/components/Card/headed-card";
+import { HeadedButton } from "@/components/interactive/Button/headed-button";
+import { VariantEnum } from '../../variants';
+import {HeadedCard} from "@/components/content/Card/headed-card";
 
 interface HeadedDialogProps {
     isOpen: boolean;

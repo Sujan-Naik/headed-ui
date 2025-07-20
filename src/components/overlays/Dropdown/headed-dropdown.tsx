@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import {Listbox, ListboxButton, ListboxOption, ListboxOptions} from '@headlessui/react';
 import styles from './headed-dropdown.module.css';
-import { VariantEnum } from '../variants';
+import { VariantEnum } from '../../variants';
 
 interface HeadedDropdownProps {
     options: string[];

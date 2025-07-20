@@ -1,7 +1,7 @@
 import React from 'react';
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react';
 import styles from './headed-accordion.module.css';
-import { VariantEnum } from '../variants';
+import { VariantEnum } from '../../variants';
 
 interface AccordionItemProps {
     title: string;

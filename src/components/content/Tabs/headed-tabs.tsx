@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import styles from './headed-tabs.module.css'
-import { VariantEnum } from '../variants'
+import { VariantEnum } from '../../variants'
 
 interface HeadedTabsProps {
     tabs: string[]

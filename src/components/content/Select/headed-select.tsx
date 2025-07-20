@@ -1,7 +1,7 @@
 import {Description, Field, Label, Select} from '@headlessui/react';
 import React, { ChangeEventHandler } from 'react';
 import { HeadedCard } from '@/index';
-import { VariantEnum } from '../variants';
+import { VariantEnum } from '../../variants';
 import styles from "./headed-select.module.css";
 
 interface HeadedSelectProps {
