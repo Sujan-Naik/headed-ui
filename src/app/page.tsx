@@ -1,12 +1,8 @@
 "use client"
 import {VariantEnum} from "@/components/variants"
 import {useState} from "react";
-import {HeadedTimeline} from "@/components/nested/date/Timeline/headed-timeline";
-import {HeadedCalendarMonth} from "@/components/nested/date/Calendar/headed-calendar-month";
-import {HeadedCalendar} from "@/components/nested/date/Calendar/headed-calendar";
-import {EventProps} from "@/components/nested/date/event";
-import {HeadedProgress} from "@/components/nested/milestones/Progress/headed-progress";
-import {HeadedStepper} from "@/components/nested/milestones/Stepper/headed-stepper";
+import * as HeadedUI from '../index';
+import {PositionEnum} from "@/components/unit/overlays/Toast/headed-toast";
 
 export default function Home() {
   const options = Object.values(VariantEnum)
@@ -18,162 +14,131 @@ export default function Home() {
     return acc
   }, {} as Record<VariantEnum, VariantEnum[]>)
 
-    const [openVariant, setOpenVariant] = useState<VariantEnum | null>(null);
+    const [openDialogVariant, setOpenDialogVariant] = useState<VariantEnum | null>(null);
+    const [openToastVariant, setOpenToastVariant] = useState<VariantEnum | null>(null);
 
 const [currentModalVariant, setCurrentModalVariant] = useState<VariantEnum | null>(null);
 const [dropdownOption, SetDropDownOption] = useState<string>('Select an option');
 const [switchState, SetSwitchState] = useState<boolean>(false);
 
 
-    const eventData: EventProps[] = [
-        {
-        variant: VariantEnum.Secondary,
-        name: "Milestone 1",
-            date: new Date(2024, 2, 1), // March 1st
-
-        description: "Complete design document",
-      },
-      {
-        variant: VariantEnum.Primary,
-        name: "Project Kickoff",
-            date: new Date(2024, 2, 10), // March 10th
-        description: "Start of the project",
-        endDate: new Date(2024, 2, 15) // March 15th
-      },
-
-      {
-        variant: VariantEnum.Outline,
-        name: "Team Meeting",
-        date: new Date(2024, 2, 20), // March 20th
-        description: "Weekly team meeting",
-      },
-    ];
-
-
-
   return (
-      <div>
-        {/*<HeadedCarousel variant={VariantEnum.Primary}>*/}
-        {/*  <div>Slide 1</div>*/}
-        {/*  <div>Slide 2</div>*/}
-        {/*  <div>Slide 3</div>*/}
-        {/*</HeadedCarousel>*/}
 
-        {/*<HeadedDatePicker variant={VariantEnum.Primary}/>*/}
+   <div style={{ display: 'flex', gap: '20px', overflowX: 'auto' }}>
+       {Object.keys(variantsMap).map((variantKey) => {
+        const variant = variantKey as VariantEnum
+        return (
+          <div key={variant} style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center', // centers children horizontally
+              gap: '10px',
+              minWidth: '200px',
+              padding: '10px',
+              border: '1px solid #ccc',
+              borderRadius: '8px',
+              backgroundColor: '#f9f9f9',
+              boxSizing: 'border-box'
+            }}>
+            <h3>{variant}</h3>
+              <HeadedUI.HeadedAccordion>
+              <HeadedUI.AccordionItem title="Item 1" variant={variant}>
+                <div>Content for Item 1</div>
+              </HeadedUI.AccordionItem>
+              <HeadedUI.AccordionItem title="Item 2" variant={variant}>
+                <div>Content for Item 2</div>
+              </HeadedUI.AccordionItem>
+            </HeadedUI.HeadedAccordion>
+              <HeadedUI.HeadedButton variant={variant}>Button {variant}</HeadedUI.HeadedButton>
+              <HeadedUI.HeadedCard variant={variant}>Card {variant}</HeadedUI.HeadedCard>
 
-        {/*<HeadedTimeline variant={VariantEnum.Primary} events={eventData} />*/}
-        {/*<HeadedCalendar*/}
-        {/*    variant={VariantEnum.Primary}*/}
-        {/*    initialYear={2024}*/}
-        {/*    initialMonth={8} // September (month is 0-based)*/}
-        {/*    events={eventData}*/}
-        {/*  />*/}
 
-          {/*<HeadedProgress progress={69} variant={VariantEnum.Primary}></HeadedProgress>*/}
-          <HeadedStepper steps={['Step 1', 'Step 2', 'Step 3']} currentStepsCompleted={1} variant={VariantEnum.Primary}></HeadedStepper>
-      </div>
+            <HeadedUI.HeadedButton variant={variant} onClick={() => setOpenDialogVariant(variant)}>
+          Trigger the {variant} Dialog
+            </HeadedUI.HeadedButton>
+
+              <HeadedUI.HeadedDialog
+              variant={variant}
+              isOpen={openDialogVariant === variant}
+              onClick={() => setOpenDialogVariant(null)}
+              title="Dialog"
+            >
+              Dialog Content {variant}
+            </HeadedUI.HeadedDialog>
+
+                <HeadedUI.HeadedButton variant={variant} onClick={() => setOpenToastVariant(variant)}>
+                  Trigger the {variant} Toast
+                    </HeadedUI.HeadedButton>
+
+                      <HeadedUI.HeadedToast
+                      variant={variant}
+                      isOpen={openToastVariant === variant}
+                      onClick={() => setOpenToastVariant(null)}
+                      title="Toast"
+                      position={PositionEnum.CENTER}
+
+                    >
+                      Toast Content {variant}
+                    </HeadedUI.HeadedToast>
+
+              <HeadedUI.HeadedDropdown
+                variant={variant}
+                selected={dropdownOption}
+                options={[ {label:'Label of Option 1',value:'Option 1'}, {label:'Label of Option 2',value:'Option 2'}]}
+                onChange={(selected) => {SetDropDownOption(selected)}}
+              />
+
+
+
+
+            <HeadedUI.HeadedButton variant={variant} onClick={() => setCurrentModalVariant(variant)}>
+        Trigger Modal {variant}
+      </HeadedUI.HeadedButton>
+
+      <HeadedUI.HeadedModal
+        variant={variant}
+        isOpen={currentModalVariant === variant}
+        onClose={() => setCurrentModalVariant(null)}
+        title={`Modal ${variant}`}
+      >
+        Modal Content {variant}
+      </HeadedUI.HeadedModal>
+
+
+            <HeadedUI.HeadedPopover variant={variant} title={`Popover ${variant}`}>
+              <div>Popover Content {variant}</div>
+            </HeadedUI.HeadedPopover>
+            <HeadedUI.HeadedSelect
+              variant={variant}
+              options={['Option A', 'Option B']}
+              label={'Label'}
+              description={`Select ${variant}`}
+              onChange={() => {}}
+            />
+
+
+            <p id="switch">Switch is off</p>
+            <HeadedUI.HeadedSwitch
+              variant={variant}
+              checked={switchState}
+              onChange={(checked) => {
+                console.log('SWITCHED');
+                SetSwitchState(checked);
+                document.getElementById('switch')!.textContent = `Switch is ${checked ? 'on' : 'off'}`;
+              }}
+            />
+
+            <HeadedUI.HeadedTabs
+              variant={variant}
+              tabs={['Tab 1', 'Tab 2']}
+              children={[
+                <div key="1">Content for Tab 1 {variant}</div>,
+                <div key="2">Content for Tab 2 {variant}</div>
+              ]}
+            />
+          </div>
+        )
+      })}
+    </div>
   )
-  // return (
-  //   <div style={{ display: 'flex', gap: '20px', overflowX: 'auto' }}>
-  //     {Object.keys(variantsMap).map((variantKey) => {
-  //       const variant = variantKey as VariantEnum
-  //       return (
-  //         <div key={variant} style={{
-  //             display: 'flex',
-  //             flexDirection: 'column',
-  //             alignItems: 'center', // centers children horizontally
-  //             gap: '10px',
-  //             minWidth: '200px',
-  //             padding: '10px',
-  //             border: '1px solid #ccc',
-  //             borderRadius: '8px',
-  //             backgroundColor: '#f9f9f9',
-  //             boxSizing: 'border-box'
-  //           }}>
-  //           <h3>{variant}</h3>
-  //             <HeadedAccordion>
-  //             <AccordionItem title="Item 1" variant={variant}>
-  //               <div>Content for Item 1</div>
-  //             </AccordionItem>
-  //             <AccordionItem title="Item 2" variant={variant}>
-  //               <div>Content for Item 2</div>
-  //             </AccordionItem>
-  //           </HeadedAccordion>
-  //             <HeadedButton variant={variant}>Button {variant}</HeadedButton>
-  //             <HeadedCard variant={variant}>Card {variant}</HeadedCard>
-  //
-  //
-  //           <HeadedButton variant={variant} onClick={() => setOpenVariant(variant)}>
-  //         Trigger the {variant} Dialog
-  //           </HeadedButton>
-  //
-  //             <HeadedDialog
-  //             variant={variant}
-  //             isOpen={openVariant === variant}
-  //             onClick={() => setOpenVariant(null)}
-  //             title="Dialog"
-  //           >
-  //             Dialog Content {variant}
-  //           </HeadedDialog>
-  //
-  //             <HeadedDropdown
-  //               variant={variant}
-  //               selected={dropdownOption}
-  //               options={['Option 1', 'Option 2']}
-  //               onChange={(selected) => {SetDropDownOption(selected)}}
-  //             />
-  //
-  //
-  //
-  //
-  //           <HeadedButton variant={variant} onClick={() => setCurrentModalVariant(variant)}>
-  //       Trigger Modal {variant}
-  //     </HeadedButton>
-  //
-  //     <HeadedModal
-  //       variant={variant}
-  //       isOpen={currentModalVariant === variant}
-  //       onClose={() => setCurrentModalVariant(null)}
-  //       title={`Modal ${variant}`}
-  //     >
-  //       Modal Content {variant}
-  //     </HeadedModal>
-  //
-  //
-  //           <HeadedPopover variant={variant} title={`Popover ${variant}`}>
-  //             <div>Popover Content {variant}</div>
-  //           </HeadedPopover>
-  //           <HeadedSelect
-  //             variant={variant}
-  //             options={['Option A', 'Option B']}
-  //             label={'Label'}
-  //             description={`Select ${variant}`}
-  //             onChange={() => {}}
-  //           />
-  //
-  //
-  //           <p id="switch">Switch is off</p>
-  //           <HeadedSwitch
-  //             variant={variant}
-  //             checked={switchState}
-  //             onChange={(checked) => {
-  //               console.log('SWITCHED');
-  //               SetSwitchState(checked);
-  //               document.getElementById('switch')!.textContent = `Switch is ${checked ? 'on' : 'off'}`;
-  //             }}
-  //           />
-  //
-  //           <HeadedTabs
-  //             variant={variant}
-  //             tabs={['Tab 1', 'Tab 2']}
-  //             children={[
-  //               <div key="1">Content for Tab 1 {variant}</div>,
-  //               <div key="2">Content for Tab 2 {variant}</div>
-  //             ]}
-  //           />
-  //         </div>
-  //       )
-  //     })}
-  //   </div>
-  // )
 }
