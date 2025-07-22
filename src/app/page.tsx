@@ -6,6 +6,7 @@ import {HeadedCalendarMonth} from "@/components/nested/date/Calendar/headed-cale
 import {HeadedCalendar} from "@/components/nested/date/Calendar/headed-calendar";
 import {EventProps} from "@/components/nested/date/event";
 import {HeadedProgress} from "@/components/nested/milestones/Progress/headed-progress";
+import {HeadedStepper} from "@/components/nested/milestones/Stepper/headed-stepper";
 
 export default function Home() {
   const options = Object.values(VariantEnum)
@@ -68,7 +69,8 @@ const [switchState, SetSwitchState] = useState<boolean>(false);
         {/*    events={eventData}*/}
         {/*  />*/}
 
-          <HeadedProgress progress={69} variant={VariantEnum.Primary}></HeadedProgress>
+          {/*<HeadedProgress progress={69} variant={VariantEnum.Primary}></HeadedProgress>*/}
+          <HeadedStepper steps={['Step 1', 'Step 2', 'Step 3']} currentStepsCompleted={1} variant={VariantEnum.Primary}></HeadedStepper>
       </div>
   )
   // return (
