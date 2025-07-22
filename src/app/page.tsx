@@ -5,6 +5,7 @@ import {HeadedTimeline} from "@/components/nested/date/Timeline/headed-timeline"
 import {HeadedCalendarMonth} from "@/components/nested/date/Calendar/headed-calendar-month";
 import {HeadedCalendar} from "@/components/nested/date/Calendar/headed-calendar";
 import {EventProps} from "@/components/nested/date/event";
+import {HeadedProgress} from "@/components/nested/milestones/Progress/headed-progress";
 
 export default function Home() {
   const options = Object.values(VariantEnum)
@@ -60,12 +61,14 @@ const [switchState, SetSwitchState] = useState<boolean>(false);
         {/*<HeadedDatePicker variant={VariantEnum.Primary}/>*/}
 
         {/*<HeadedTimeline variant={VariantEnum.Primary} events={eventData} />*/}
-        <HeadedCalendar
-            variant={VariantEnum.Primary}
-            initialYear={2024}
-            initialMonth={8} // September (month is 0-based)
-            events={eventData}
-          />
+        {/*<HeadedCalendar*/}
+        {/*    variant={VariantEnum.Primary}*/}
+        {/*    initialYear={2024}*/}
+        {/*    initialMonth={8} // September (month is 0-based)*/}
+        {/*    events={eventData}*/}
+        {/*  />*/}
+
+          <HeadedProgress progress={69} variant={VariantEnum.Primary}></HeadedProgress>
       </div>
   )
   // return (

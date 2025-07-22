@@ -1,0 +1,66 @@
+.hui-base-progress-container {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: var(--hover);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.hui-base-progress-fill {
+  height: 100%;
+  background-color: var(--base-foreground);
+  transition: width 0.3s ease;
+}
+
+.hui-head {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  background-color: var(--highlight);
+  transform: translateX(-50%);
+    left: 100%;
+}
+
+
+.hui-primary-progress-container {
+  composes: hui-base-progress-container;
+}
+
+.hui-primary-progress-fill {
+  composes: hui-base-progress-container;
+    background-color: var(--background-primary);
+}
+
+
+.hui-secondary-progress-container {
+  composes: hui-base-progress-container;
+}
+
+.hui-secondary-progress-fill {
+  composes: hui-base-progress-container;
+  background-color: var(--background-secondary);
+}
+
+
+.hui-tertiary-progress-container {
+  composes: hui-base-progress-container;
+}
+
+.hui-tertiary-progress-fill {
+  composes: hui-base-progress-container;
+  background-color: var(--background-tertiary);
+}
+
+
+.hui-outline-progress-container {
+  composes: hui-base-progress-container;
+}
+
+.hui-outline-progress-fill {
+  composes: hui-base-progress-container;
+}
+
+
+
