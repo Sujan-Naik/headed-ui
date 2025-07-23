@@ -1,8 +1,0 @@
-.hui-primary-dropdown {
-    background-color: white;
-    border: 2vw var(--border-color); /* Bright blue border */
-    border-radius: 4px;
-    padding: var(--button-padding);
-    width: 100%;
-    cursor: pointer;
-}
