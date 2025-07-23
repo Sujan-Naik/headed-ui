@@ -3,12 +3,12 @@ import {HeadedButton} from "@/components/unit/interactive/Button/headed-button";
 import {VariantEnum} from "@/components/variants";
 import {HeadedCard} from "@/components/unit/content/Card/headed-card";
 
-interface CarouselProps{
+interface CarouselProps {
     children: React.ReactNode;
     variant: VariantEnum;
 }
 
-export const HeadedCarousel: React.FC<CarouselProps> = ({children, variant}) =>{
+export const HeadedCarousel: React.FC<CarouselProps> = ({children, variant}) => {
     const childrenArray = React.Children.toArray(children);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -28,7 +28,7 @@ export const HeadedCarousel: React.FC<CarouselProps> = ({children, variant}) =>{
         <HeadedCard variant={variant}>
             {childrenArray[currentIndex]}
         </HeadedCard>
-        <div className={"flex-row"} style={{ display: 'flex', justifyContent: 'space-between'}}>
+        <div className={"flex-row"} style={{display: 'flex', justifyContent: 'space-between'}}>
             <HeadedButton variant={variant} onClick={goBack}> Go Back</HeadedButton>
             <HeadedButton variant={variant} onClick={goForward}> Go Forward</HeadedButton>
         </div>

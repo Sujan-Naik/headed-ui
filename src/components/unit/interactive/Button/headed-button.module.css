@@ -1,6 +1,6 @@
 .hui-base-button {
-    border: 5px solid var(--border-color);
-    border-radius: 100px;
+    border: var(--border-thickness) solid var(--border-color);
+    border-radius: var(--border-radius);
     padding: var(--button-padding);
     font-size: 1rem;
     cursor: pointer;

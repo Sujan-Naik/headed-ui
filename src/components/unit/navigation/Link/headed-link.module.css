@@ -1,6 +1,7 @@
 .hui-base-link {
     color: var(--link-color);
     position: relative;
+    padding: var(--padding-thickness);
 }
 
 .hui-base-link:hover {
@@ -8,24 +9,24 @@
     transform: translateY(-2px);
 }
 
-.hui-primary-link{
-    composes:hui-base-link;
+.hui-primary-link {
+    composes: hui-base-link;
     background-color: var(--background-primary)
 }
 
-.hui-secondary-link{
-    composes:hui-base-link;
+.hui-secondary-link {
+    composes: hui-base-link;
     background-color: var(--background-secondary)
 
 }
 
-.hui-tertiary-link{
-    composes:hui-base-link;
+.hui-tertiary-link {
+    composes: hui-base-link;
     background-color: var(--background-tertiary)
 
 }
 
-.hui-outline-link{
-    composes:hui-base-link;
+.hui-outline-link {
+    composes: hui-base-link;
     background-color: var(--base-background)
 }

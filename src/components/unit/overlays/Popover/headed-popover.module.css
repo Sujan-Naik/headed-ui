@@ -1,5 +1,5 @@
-.hui-base-popover-button{
-    border: 1px solid var(--border-color);
+.hui-base-popover-button {
+    border: var(--border-thickness) solid var(--border-color);
     padding: var(--button-padding);
     font-size: 1rem;
     cursor: pointer;
@@ -30,32 +30,32 @@
 }
 
 
-.hui-base-popover-panel{
-    border: 1px solid var(--border-color);
+.hui-base-popover-panel {
+    border: var(--border-thickness) solid var(--border-color);
     padding: var(--button-padding);
     font-size: 1rem;
     cursor: pointer;
 }
 
-.hui-primary-popover-panel{
+.hui-primary-popover-panel {
     composes: hui-base-popover-panel;
     background-color: var(--background-primary);
     color: var(--foreground-primary);
 }
 
-.hui-secondary-popover-panel{
+.hui-secondary-popover-panel {
     composes: hui-base-popover-panel;
     background-color: var(--background-secondary);
     color: var(--foreground-secondary);
 }
 
-.hui-tertiary-popover-panel{
+.hui-tertiary-popover-panel {
     composes: hui-base-popover-panel;
     background-color: var(--background-tertiary);
     color: var(--foreground-tertiary);
 }
 
-.hui-outline-popover-panel{
+.hui-outline-popover-panel {
     composes: hui-base-popover-panel;
     background-color: transparent;
     color: var(--foreground-primary);

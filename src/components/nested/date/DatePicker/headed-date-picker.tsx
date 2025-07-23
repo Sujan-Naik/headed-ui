@@ -1,9 +1,9 @@
-import React, { SetStateAction, useState} from 'react';
+import React, {SetStateAction, useState} from 'react';
 import {HeadedDropdown} from "@/components/unit/overlays/Dropdown/headed-dropdown";
 import {VariantEnum} from "@/components/variants";
 import {HeadedButton} from "@/components/unit/interactive/Button/headed-button";
 
-interface DatePickerProps{
+interface DatePickerProps {
     variant: VariantEnum;
 }
 
@@ -63,7 +63,7 @@ export const HeadedDatePicker: React.FC<DatePickerProps> = ({variant}) => {
             <div>
                 <label htmlFor="year">Year:</label>
                 <HeadedDropdown
-                    options={years.map((yr) => ({ label: yr.toString(), value: yr.toString() }))}
+                    options={years.map((yr) => ({label: yr.toString(), value: yr.toString()}))}
                     selected={selectedYear}
                     onChange={(value: SetStateAction<string>) => setSelectedYear(value)}
                     variant={variant} // replace with your actual variant
@@ -73,10 +73,10 @@ export const HeadedDatePicker: React.FC<DatePickerProps> = ({variant}) => {
             <div>
                 <label htmlFor="month">Month:</label>
                 <HeadedDropdown
-                  options={months.map((m) => ({ label: m.label, value: m.value.toString() }))}
-                  selected={selectedLabel}
-                  onChange={(value: string) => setSelectedMonth(value)}
-                  variant={variant}
+                    options={months.map((m) => ({label: m.label, value: m.value.toString()}))}
+                    selected={selectedLabel}
+                    onChange={(value: string) => setSelectedMonth(value)}
+                    variant={variant}
                 />
             </div>
 
@@ -96,21 +96,21 @@ export const HeadedDatePicker: React.FC<DatePickerProps> = ({variant}) => {
                     options={hours}
                     selected={selectedHour}
                     onChange={(value: SetStateAction<string>) => setSelectedHour(value)}
-          variant={variant}
-        />
-      </div>
+                    variant={variant}
+                />
+            </div>
 
-      <div>
-        <label htmlFor="minute">Minute:</label>
-        <HeadedDropdown
-          options={minutes}
-          selected={selectedMinute}
-          onChange={(value: SetStateAction<string>) => setSelectedMinute(value)}
-          variant={variant}
-        />
-      </div>
+            <div>
+                <label htmlFor="minute">Minute:</label>
+                <HeadedDropdown
+                    options={minutes}
+                    selected={selectedMinute}
+                    onChange={(value: SetStateAction<string>) => setSelectedMinute(value)}
+                    variant={variant}
+                />
+            </div>
 
-      <HeadedButton variant={variant} onClick={handleSubmit}>Submit</HeadedButton>
-    </div>
-  );
+            <HeadedButton variant={variant} onClick={handleSubmit}>Submit</HeadedButton>
+        </div>
+    );
 };

@@ -1,7 +1,7 @@
 .hui-base-description {
     background-color: var(--base-background);
-    border-radius: 16px;
-    padding: 24px;
+    border-radius: var(--border-radius);
+    padding: var(--padding-thickness);
     transition: box-shadow 0.4s ease, transform 0.2s ease;
 }
 
@@ -26,15 +26,15 @@
 .hui-outline-description {
     composes: hui-base-description;
     background-color: transparent;
-    border: 2px solid var(--border-color);
+    border: var(--border-thickness) solid var(--border-color);
     color: var(--foreground-primary);
 }
 
 
 .hui-base-select {
     background-color: var(--base-background);
-    border-radius: 16px;
-    padding: 24px;
+    border-radius: var(--border-radius);
+    padding: var(--padding-thickness);
     transition: box-shadow 0.4s ease, transform 0.2s ease;
 }
 
@@ -59,6 +59,6 @@
 .hui-outline-select {
     composes: hui-base-select;
     background-color: transparent;
-    border: 2px solid var(--border-color);
+    border: var(--border-thickness) solid var(--border-color);
     color: var(--foreground-primary);
 }

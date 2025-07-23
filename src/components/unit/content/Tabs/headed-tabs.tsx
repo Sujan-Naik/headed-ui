@@ -1,7 +1,7 @@
-import React, { MouseEventHandler } from 'react'
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import React, {MouseEventHandler} from 'react'
+import {Tab, TabGroup, TabList, TabPanel, TabPanels} from '@headlessui/react'
 import styles from './headed-tabs.module.css'
-import { VariantEnum } from '../../../variants'
+import {VariantEnum} from '../../../variants'
 
 interface HeadedTabsProps {
     tabs: string[]
@@ -10,7 +10,7 @@ interface HeadedTabsProps {
     variant?: VariantEnum
 }
 
-export const HeadedTabs: React.FC<HeadedTabsProps> = ({ tabs, children, onClick, variant = VariantEnum.Primary }) => {
+export const HeadedTabs: React.FC<HeadedTabsProps> = ({tabs, children, onClick, variant = VariantEnum.Primary}) => {
     return (
         <TabGroup>
             <TabList className={styles[`hui-${variant}-tabs`]}>

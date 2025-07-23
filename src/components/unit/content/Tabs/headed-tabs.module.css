@@ -1,4 +1,4 @@
-.hui-base-tabs{
+.hui-base-tabs {
     display: flex;
     border-bottom: 3px solid var(--border-color);
     background-color: var(--base-background);
@@ -29,6 +29,7 @@
 .hui-base-tab {
     padding: var(--button-padding);
 }
+
 .hui-primary-tab {
     composes: hui-base-tab;
     background-color: var(--background-primary);
@@ -70,11 +71,11 @@
     border-color: var(--hover);
 }
 
-.hui-base-panel{
+.hui-base-panel {
 
 }
 
-.hui-primary-panel{
+.hui-primary-panel {
 
 }
 

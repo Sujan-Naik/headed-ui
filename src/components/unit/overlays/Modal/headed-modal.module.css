@@ -11,28 +11,35 @@
 
 .hui-primary-modal {
     composes: hui-base-modal;
-    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+    background-color: var(--background-secondary);
 }
 
 .hui-secondary-modal {
     composes: hui-base-modal;
+    color: var(--foreground-secondary);
+
     background-color: var(--background-secondary);
 }
 
 .hui-tertiary-modal {
     composes: hui-base-modal;
+    color: var(--foreground-tertiary);
+
     background-color: var(--background-tertiary);
 }
 
 .hui-outline-modal {
     composes: hui-base-modal;
+    color: var(--base-foreground);
+
     background-color: var(--base-background);
-    border: 2px solid var(--border-color);
+    border: var(--border-thickness) solid var(--border-color);
 }
 
 .hui-base-modal-panel {
     background-color: var(--background-primary);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     max-width: var(--modal-max-width);
     width: 100%;
     height: 100%;
@@ -58,7 +65,7 @@
 .hui-outline-modal-panel {
     composes: hui-base-modal-panel;
     background-color: transparent;
-    border: 0.2vw solid var(--border-color);
+    border: var(--border-thickness) .2vw solid var(--border-color);
 }
 
 .hui-primary-modal-title,

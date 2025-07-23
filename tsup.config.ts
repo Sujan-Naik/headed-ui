@@ -9,5 +9,6 @@ export default defineConfig({
     clean: true,
     outDir: 'dist',
     loader: {
-        '.css': 'copy'},
+        '.css': 'copy'
+    },
 });

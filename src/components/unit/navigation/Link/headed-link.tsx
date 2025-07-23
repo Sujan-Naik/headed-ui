@@ -11,12 +11,12 @@ interface PrimaryLinkProps extends LinkProps {
 }
 
 export const HeadedLink: React.FC<PrimaryLinkProps> = ({
-                                                            children,
-                                                            className,
-                                                            onClick,
-    variant,
-                                                            ...props
-                                                        }) => {
+                                                           children,
+                                                           className,
+                                                           onClick,
+                                                           variant,
+                                                           ...props
+                                                       }) => {
     return (
         <Link {...props} className={`${styles[`hui-${variant}-link`]} ${className ?? ''}`} onClick={onClick}>
             {children}

@@ -1,9 +1,9 @@
 :root {
-
-    --highlight: Gold;
+    background-color: aqua;
+    --highlight: #b0e0e6;
     --base-background: white;
     --base-foreground: black;
-    --hover: #BBBBBBBB;
+    --hover: #007bff;
     --background-primary: #0C56BC;
     --foreground-primary: #A4C3D2;
 
@@ -13,8 +13,11 @@
     --background-tertiary: #00308F;
     --foreground-tertiary: #BFD4DB;
 
-    --border-color: #000019;
+    --border-radius: 16px;
+    --border-color: #d3d3d3;
     --border-thickness: 5px;
+
+    --padding-thickness: 10px;
 
     --modal-max-width: 800px;
     --modal-min-width: 400px;

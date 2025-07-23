@@ -1,6 +1,6 @@
 .hui-base-toast {
     background-color: var(--base-background);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     /*max-width: var(--toast-max-width);*/
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 2rem;
@@ -20,7 +20,7 @@
 
 .hui-outline-toast {
     background-color: transparent;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     /*max-width: var(--toast-max-width);*/
     box-shadow: none;
     padding: 2rem;
