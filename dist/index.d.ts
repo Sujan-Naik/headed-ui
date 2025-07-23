@@ -138,4 +138,4 @@ declare enum PositionEnum {
 }
 declare const HeadedToast: React__default.FC<HeadedToastProps>;
 
-export { AccordionItem, HeadedAccordion, HeadedButton, HeadedCard, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedLink, HeadedModal, HeadedPopover, HeadedSelect, HeadedSwitch, HeadedTabs, HeadedToast };
+export { AccordionItem, HeadedAccordion, HeadedButton, HeadedCard, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedLink, HeadedModal, HeadedPopover, HeadedSelect, HeadedSwitch, HeadedTabs, HeadedToast, VariantEnum };
