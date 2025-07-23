@@ -1,3 +1,4 @@
+export {VariantEnum} from './components/variants';
 export {HeadedAccordion, AccordionItem} from '@/components/unit/content/Accordion/headed-accordion';
 export {HeadedButton} from '@/components/unit/interactive/Button/headed-button';
 export {HeadedCard} from '@/components/unit/content/Card/headed-card';
