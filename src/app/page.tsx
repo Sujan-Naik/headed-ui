@@ -2,7 +2,6 @@
 import {VariantEnum} from "@/components/variants"
 import {useState} from "react";
 import * as HeadedUI from '../index';
-import {PositionEnum} from "@/components/unit/overlays/Toast/headed-toast";
 
 export default function Home() {
     const options = Object.values(VariantEnum)
@@ -54,6 +53,8 @@ export default function Home() {
                         backgroundColor: '#f9f9f9',
                         boxSizing: 'border-box'
                     }}>
+                                    <a href={'/nested'}> View nested components</a>
+
                         <h3>{variant}</h3>
                         <HeadedUI.HeadedAccordion>
                             <HeadedUI.AccordionItem title="Item 1" variant={variant}>
@@ -89,7 +90,7 @@ export default function Home() {
                             isOpen={openToastVariant === variant}
                             onClick={() => setOpenToastVariant(null)}
                             title="Toast"
-                            position={PositionEnum.CENTER}
+                            position={HeadedUI.PositionEnum.CENTER}
 
                         >
                             Toast Content {variant}
