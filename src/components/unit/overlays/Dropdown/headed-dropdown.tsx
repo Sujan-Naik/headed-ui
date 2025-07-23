@@ -4,14 +4,14 @@ import styles from './headed-dropdown.module.css';
 import { VariantEnum } from '../../../variants';
 
 interface HeadedDropdownProps {
-    options: Option[];
+    options: HeadedDropdownOption[];
     selected: string;
     onChange: (value: string) => void;
     variant: VariantEnum;
     horizontal?: boolean;
 }
 
-interface Option {
+export interface HeadedDropdownOption {
   label: string;
   value: string;
 }

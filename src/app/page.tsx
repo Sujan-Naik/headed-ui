@@ -19,7 +19,21 @@ export default function Home() {
 
 const [currentModalVariant, setCurrentModalVariant] = useState<VariantEnum | null>(null);
 const [dropdownOption, SetDropDownOption] = useState<string>('Select an option');
-const [switchState, SetSwitchState] = useState<boolean>(false);
+
+
+const initialStates = Object.values(VariantEnum).reduce((acc, variant) => {
+  acc[variant] = false; // or your initial value
+  return acc;
+}, {} as Record<VariantEnum, boolean>);
+
+const [switchStates, setSwitchStates] = useState<Record<VariantEnum, boolean>>(initialStates);
+
+  const handleSwitchChange = (variant: VariantEnum) => {
+    // Create a copy of the state object to avoid mutation
+    const updatedStates = { ...switchStates };
+    updatedStates[variant] = !updatedStates[variant];
+    setSwitchStates(updatedStates);
+  };
 
 
   return (
@@ -50,8 +64,8 @@ const [switchState, SetSwitchState] = useState<boolean>(false);
               </HeadedUI.AccordionItem>
             </HeadedUI.HeadedAccordion>
               <HeadedUI.HeadedButton variant={variant}>Button {variant}</HeadedUI.HeadedButton>
+              <HeadedUI.HeadedButton variant={variant}>Button {variant}</HeadedUI.HeadedButton>
               <HeadedUI.HeadedCard variant={variant}>Card {variant}</HeadedUI.HeadedCard>
-
 
             <HeadedUI.HeadedButton variant={variant} onClick={() => setOpenDialogVariant(variant)}>
           Trigger the {variant} Dialog
@@ -117,14 +131,14 @@ const [switchState, SetSwitchState] = useState<boolean>(false);
             />
 
 
-            <p id="switch">Switch is off</p>
+            <p id={`switch-${variant}`}>Switch is off</p>
             <HeadedUI.HeadedSwitch
               variant={variant}
-              checked={switchState}
+              checked={switchStates[variant]}
               onChange={(checked) => {
                 console.log('SWITCHED');
-                SetSwitchState(checked);
-                document.getElementById('switch')!.textContent = `Switch is ${checked ? 'on' : 'off'}`;
+                handleSwitchChange(variant)
+                document.getElementById(`switch-${variant}`)!.textContent = `Switch is ${checked ? 'on' : 'off'}`;
               }}
             />
 
