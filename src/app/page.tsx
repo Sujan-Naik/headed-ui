@@ -1,33 +1,36 @@
 "use client"
-import {VariantEnum} from "@/components/variants"
 import {useState} from "react";
-import * as HeadedUI from '../index';
+import * as HeadedUI from 'headed-ui';
+import React from 'react';
+
+import 'headed-ui/styles/variables.css'
+
 
 export default function Home() {
-    const options = Object.values(VariantEnum)
+    const options = Object.values(HeadedUI.VariantEnum)
     const variantsMap = options.reduce((acc, variant) => {
         if (!acc[variant]) {
             acc[variant] = []
         }
         acc[variant].push(variant)
         return acc
-    }, {} as Record<VariantEnum, VariantEnum[]>)
+    }, {} as Record<HeadedUI.VariantEnum, HeadedUI.VariantEnum[]>)
 
-    const [openDialogVariant, setOpenDialogVariant] = useState<VariantEnum | null>(null);
-    const [openToastVariant, setOpenToastVariant] = useState<VariantEnum | null>(null);
+    const [openDialogVariant, setOpenDialogVariant] = useState<HeadedUI.VariantEnum | null>(null);
+    const [openToastVariant, setOpenToastVariant] = useState<HeadedUI.VariantEnum | null>(null);
 
-    const [currentModalVariant, setCurrentModalVariant] = useState<VariantEnum | null>(null);
+    const [currentModalVariant, setCurrentModalVariant] = useState<HeadedUI.VariantEnum | null>(null);
     const [dropdownOption, SetDropDownOption] = useState<string>('Select an option');
 
 
-    const initialStates = Object.values(VariantEnum).reduce((acc, variant) => {
+    const initialStates = Object.values(HeadedUI.VariantEnum).reduce((acc, variant) => {
         acc[variant] = false; // or your initial value
         return acc;
-    }, {} as Record<VariantEnum, boolean>);
+    }, {} as Record<HeadedUI.VariantEnum, boolean>);
 
-    const [switchStates, setSwitchStates] = useState<Record<VariantEnum, boolean>>(initialStates);
+    const [switchStates, setSwitchStates] = useState<Record<HeadedUI.VariantEnum, boolean>>(initialStates);
 
-    const handleSwitchChange = (variant: VariantEnum) => {
+    const handleSwitchChange = (variant: HeadedUI.VariantEnum) => {
         // Create a copy of the state object to avoid mutation
         const updatedStates = {...switchStates};
         updatedStates[variant] = !updatedStates[variant];
@@ -39,7 +42,7 @@ export default function Home() {
 
         <div style={{display: 'flex', gap: '20px'}}>
             {Object.keys(variantsMap).map((variantKey) => {
-                const variant = variantKey as VariantEnum
+                const variant = variantKey as HeadedUI.VariantEnum
                 return (
                     <div key={variant} style={{
                         display: 'flex',
@@ -64,7 +67,6 @@ export default function Home() {
                                 <div>Content for Item 2</div>
                             </HeadedUI.AccordionItem>
                         </HeadedUI.HeadedAccordion>
-                        <HeadedUI.HeadedButton variant={variant}>Button {variant}</HeadedUI.HeadedButton>
                         <HeadedUI.HeadedButton variant={variant}>Button {variant}</HeadedUI.HeadedButton>
                         <HeadedUI.HeadedCard variant={variant}>Card {variant}</HeadedUI.HeadedCard>
 

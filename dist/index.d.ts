@@ -1,5 +1,4 @@
-import * as React$1 from 'react';
-import React__default, { ChangeEventHandler, MouseEventHandler } from 'react';
+import React, { ChangeEventHandler, MouseEventHandler } from 'react';
 import { LinkProps } from 'next/link';
 
 declare enum VariantEnum {
@@ -11,38 +10,38 @@ declare enum VariantEnum {
 
 interface AccordionItemProps {
     title: string;
-    children: React__default.ReactNode;
+    children: React.ReactNode;
     variant: VariantEnum;
 }
-declare const AccordionItem: React__default.FC<AccordionItemProps>;
-declare const HeadedAccordion: React__default.FC<{
-    children: React__default.ReactNode;
+declare const AccordionItem: React.FC<AccordionItemProps>;
+declare const HeadedAccordion: React.FC<{
+    children: React.ReactNode;
 }>;
 
 interface ButtonProps {
-    children: React__default.ReactNode;
+    children: React.ReactNode;
     onClick?: () => void;
     className?: string;
     variant: VariantEnum;
 }
-declare const HeadedButton: React__default.FC<ButtonProps>;
+declare const HeadedButton: React.FC<ButtonProps>;
 
 interface HeadedCardProps {
     width?: string;
     height?: string;
     variant: VariantEnum;
-    children: React__default.ReactNode;
-    style?: React__default.CSSProperties;
+    children: React.ReactNode;
+    style?: React.CSSProperties;
     className?: string;
 }
-declare const HeadedCard: React__default.FC<HeadedCardProps>;
+declare const HeadedCard: React.FC<HeadedCardProps>;
 
 interface HeadedDialogProps {
     isOpen: boolean;
     onClick: () => void;
     title: string;
     variant: VariantEnum;
-    children: React__default.ReactNode;
+    children: React.ReactNode;
     position?: PositionEnum$1;
 }
 declare enum PositionEnum$1 {
@@ -54,7 +53,7 @@ declare enum PositionEnum$1 {
     BOTTOM_LEFT = "bottom-left",
     BOTTOM_RIGHT = "bottom-right"
 }
-declare const HeadedDialog: React__default.FC<HeadedDialogProps>;
+declare const HeadedDialog: React.FC<HeadedDialogProps>;
 
 interface HeadedDropdownProps {
     options: HeadedDropdownOption[];
@@ -67,31 +66,31 @@ interface HeadedDropdownOption {
     label: string;
     value: string;
 }
-declare const HeadedDropdown: React__default.FC<HeadedDropdownProps>;
+declare const HeadedDropdown: React.FC<HeadedDropdownProps>;
 
 interface PrimaryLinkProps extends LinkProps {
     className?: string;
-    children: React__default.ReactNode;
+    children: React.ReactNode;
     onClick?: () => void;
     variant: VariantEnum;
 }
-declare const HeadedLink: React__default.FC<PrimaryLinkProps>;
+declare const HeadedLink: React.FC<PrimaryLinkProps>;
 
 interface HeadedModalProps {
     isOpen: boolean;
     onClose: () => void;
     title: string;
     variant: VariantEnum;
-    children: React__default.ReactNode;
+    children: React.ReactNode;
 }
-declare const HeadedModal: React__default.FC<HeadedModalProps>;
+declare const HeadedModal: React.FC<HeadedModalProps>;
 
 interface HeadedPopoverProps {
     title: string;
     children: React.ReactNode;
     variant: VariantEnum;
 }
-declare function HeadedPopover({ title, children, variant }: HeadedPopoverProps): React$1.JSX.Element;
+declare function HeadedPopover({ title, children, variant }: HeadedPopoverProps): React.JSX.Element;
 
 interface HeadedSelectProps {
     options: string[];
@@ -100,31 +99,31 @@ interface HeadedSelectProps {
     onChange: ChangeEventHandler<HTMLSelectElement>;
     variant: VariantEnum;
 }
-declare const HeadedSelect: React__default.FC<HeadedSelectProps>;
+declare const HeadedSelect: React.FC<HeadedSelectProps>;
 
 interface HeadedSwitchProps {
     checked: boolean;
     onChange: (checked: boolean) => void;
     className?: string;
     variant: VariantEnum;
-    label?: React__default.ReactNode;
+    label?: React.ReactNode;
 }
-declare const HeadedSwitch: React__default.FC<HeadedSwitchProps>;
+declare const HeadedSwitch: React.FC<HeadedSwitchProps>;
 
 interface HeadedTabsProps {
     tabs: string[];
-    children: React__default.ReactNode[];
+    children: React.ReactNode[];
     onClick?: MouseEventHandler<HTMLButtonElement>;
     variant?: VariantEnum;
 }
-declare const HeadedTabs: React__default.FC<HeadedTabsProps>;
+declare const HeadedTabs: React.FC<HeadedTabsProps>;
 
 interface HeadedToastProps {
     isOpen: boolean;
     onClick: () => void;
     title: string;
     variant: VariantEnum;
-    children: React__default.ReactNode;
+    children: React.ReactNode;
     position?: PositionEnum;
 }
 declare enum PositionEnum {
@@ -136,6 +135,54 @@ declare enum PositionEnum {
     BOTTOM_LEFT = "bottom-left",
     BOTTOM_RIGHT = "bottom-right"
 }
-declare const HeadedToast: React__default.FC<HeadedToastProps>;
+declare const HeadedToast: React.FC<HeadedToastProps>;
 
-export { AccordionItem, HeadedAccordion, HeadedButton, HeadedCard, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedLink, HeadedModal, HeadedPopover, HeadedSelect, HeadedSwitch, HeadedTabs, HeadedToast, VariantEnum };
+interface EventProps {
+    variant: VariantEnum;
+    name: string;
+    description: string;
+    date: Date;
+    endDate?: Date;
+}
+
+interface CarouselProps {
+    children: React.ReactNode;
+    variant: VariantEnum;
+}
+declare const HeadedCarousel: React.FC<CarouselProps>;
+
+interface HeadedCalendarProps {
+    variant: VariantEnum;
+    initialYear?: number;
+    initialMonth?: number;
+    events: EventProps[];
+}
+declare const HeadedCalendar: React.FC<HeadedCalendarProps>;
+
+interface DatePickerProps {
+    variant: VariantEnum;
+}
+declare const HeadedDatePicker: React.FC<DatePickerProps>;
+
+interface HeadedProgressProps {
+    progress: number;
+    className?: string;
+    style?: React.CSSProperties;
+    variant: VariantEnum;
+}
+declare const HeadedProgress: React.FC<HeadedProgressProps>;
+
+interface HeadedStepperProps {
+    steps: string[];
+    currentStepsCompleted: number;
+    variant: VariantEnum;
+}
+declare const HeadedStepper: React.FC<HeadedStepperProps>;
+
+interface TimelineProps {
+    variant: VariantEnum;
+    events: EventProps[];
+}
+declare const HeadedTimeline: React.FC<TimelineProps>;
+
+export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTimeline, HeadedToast, PositionEnum, VariantEnum };
