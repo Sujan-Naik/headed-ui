@@ -30,6 +30,15 @@ var __objRest = (source, exclude) => {
   return target;
 };
 
+// src/components/variants.ts
+var VariantEnum = /* @__PURE__ */ ((VariantEnum2) => {
+  VariantEnum2["Primary"] = "primary";
+  VariantEnum2["Secondary"] = "secondary";
+  VariantEnum2["Tertiary"] = "tertiary";
+  VariantEnum2["Outline"] = "outline";
+  return VariantEnum2;
+})(VariantEnum || {});
+
 // src/components/unit/content/Accordion/headed-accordion.tsx
 import React2 from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
@@ -335,6 +344,7 @@ export {
   HeadedSelect,
   HeadedSwitch,
   HeadedTabs,
-  HeadedToast
+  HeadedToast,
+  VariantEnum
 };
 //# sourceMappingURL=index.js.map
