@@ -3,6 +3,7 @@
   "compilerOptions": {
     "incremental": true,
     "tsBuildInfoFile": "./.tsbuildinfo",
-    "noEmit": false // important for emitting files during build
+    "noEmit": false
+    // important for emitting files during build
   }
 }

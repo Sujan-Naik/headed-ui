@@ -1,0 +1,48 @@
+.hui-base-button {
+    border: var(--border-thickness) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--button-padding);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hui-primary-button {
+    composes: hui-base-button;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+}
+
+.hui-primary-button:hover {
+    background-color: var(--hover);
+}
+
+.hui-secondary-button {
+    composes: hui-base-button;
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+}
+
+.hui-secondary-button:hover {
+    background-color: var(--hover);
+}
+
+.hui-tertiary-button {
+    composes: hui-base-button;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-tertiary);
+}
+
+.hui-tertiary-button:hover {
+    background-color: var(--hover);
+}
+
+.hui-outline-button {
+    composes: hui-base-button;
+    background-color: transparent;
+    color: var(--foreground-primary);
+}
+
+.hui-outline-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}

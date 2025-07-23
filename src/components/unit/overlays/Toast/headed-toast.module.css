@@ -1,0 +1,27 @@
+.hui-base-toast {
+    background-color: var(--base-background);
+    border-radius: var(--border-radius);
+    /*max-width: var(--toast-max-width);*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+.hui-primary-toast {
+    composes: hui-base-toast;
+}
+
+.hui-secondary-toast {
+    composes: hui-base-toast;
+}
+
+.hui-tertiary-toast {
+    composes: hui-base-toast;
+}
+
+.hui-outline-toast {
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    /*max-width: var(--toast-max-width);*/
+    box-shadow: none;
+    padding: 2rem;
+}

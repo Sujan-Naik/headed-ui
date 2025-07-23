@@ -1,0 +1,55 @@
+.hui-base-card {
+    background-color: var(--base-background);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    transition: box-shadow 0.4s ease, transform 0.2s ease;
+    border: var(--border-thickness) solid var(--border-color);
+}
+
+.hui-primary-card {
+    composes: hui-base-card;
+    color: var(--foreground-primary);
+    background-color: var(--background-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hui-primary-card:hover {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
+}
+
+.hui-secondary-card {
+    composes: hui-base-card;
+    color: var(--foreground-secondary);
+    background-color: var(--background-secondary);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hui-secondary-card:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.hui-tertiary-card {
+    composes: hui-base-card;
+    color: var(--foreground-tertiary);
+    background-color: var(--background-tertiary);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hui-tertiary-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.hui-outline-card {
+    composes: hui-base-card;
+    background-color: transparent;
+    color: var(--foreground-primary);
+    box-shadow: none;
+}
+
+.hui-outline-card:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
