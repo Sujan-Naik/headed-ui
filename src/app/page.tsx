@@ -109,6 +109,10 @@ const [switchStates, setSwitchStates] = useState<Record<VariantEnum, boolean>>(i
         Trigger Modal {variant}
       </HeadedUI.HeadedButton>
 
+            <HeadedUI.HeadedLink variant={variant} href={'/structure'}>
+              Go to the structure page
+            </HeadedUI.HeadedLink>
+
       <HeadedUI.HeadedModal
         variant={variant}
         isOpen={currentModalVariant === variant}

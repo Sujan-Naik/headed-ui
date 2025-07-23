@@ -14,12 +14,13 @@
     --foreground-tertiary: #BFD4DB;
 
     --border-color: #000019;
+    --border-thickness: 5px;
 
     --modal-max-width: 800px;
     --modal-min-width: 400px;
     --button-padding: 0.5rem 1rem;
     --accordion-padding: 0.75rem;
     --tab-height: 50px;
-    --link-color: var(--foreground-primary);
+    --link-color: Gold;
     --link-icon-size: 4px;
 }
