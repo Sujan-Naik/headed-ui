@@ -1,9 +1,8 @@
 "use client"
 import {useState} from "react";
-import * as HeadedUI from 'headed-ui';
+import * as HeadedUI from '../index';
 import React from 'react';
 
-import 'headed-ui/styles/variables.css'
 
 
 export default function Home() {

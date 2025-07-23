@@ -1,7 +1,6 @@
 "use client"
-import 'headed-ui/styles/variables.css'
 
-import * as HeadedUI from 'headed-ui';
+import * as HeadedUI from '../../index';
 
 
 export default function Home() {
