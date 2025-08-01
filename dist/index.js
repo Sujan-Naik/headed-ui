@@ -56,12 +56,35 @@ var HeadedAccordion = ({ children }) => {
 import { Button } from "@headlessui/react";
 import React2 from "react";
 import styles2 from "./headed-button.module-HCCTWVQY.module.css";
-var HeadedButton = ({ children, onClick, className = "", variant }) => {
+var HeadedButton = ({
+  children,
+  onClick,
+  className = "",
+  variant,
+  type = "button",
+  disabled,
+  form,
+  name,
+  value,
+  autoFocus,
+  "aria-label": ariaLabel,
+  "aria-describedby": ariaDescribedby,
+  id
+}) => {
   return /* @__PURE__ */ React2.createElement(
     Button,
     {
       onClick,
-      className: `${styles2[`hui-${variant}-button`]} ${className}`
+      className: `${styles2[`hui-${variant}-button`]} ${className}`,
+      type,
+      disabled,
+      form,
+      name,
+      value,
+      autoFocus,
+      "aria-label": ariaLabel,
+      "aria-describedby": ariaDescribedby,
+      id
     },
     children
   );
