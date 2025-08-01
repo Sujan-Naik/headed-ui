@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './headed-input.module.css';
-import {VariantEnum} from 'headed-ui';
+import {VariantEnum} from '../../../variants'
 
 interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   onChange?: (value: string) => void;

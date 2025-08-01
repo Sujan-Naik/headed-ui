@@ -182,10 +182,32 @@ var HeadedDropdown = ({ options, horizontal, selected, onChange, variant }) => {
   )))));
 };
 
-// src/components/unit/navigation/Link/headed-link.tsx
+// src/components/unit/interactive/Input/headed-input.tsx
 import React6 from "react";
+import styles6 from "./headed-input.module-NX5NXN6J.module.css";
+var HeadedInput = (_a) => {
+  var _b = _a, {
+    onChange,
+    className = "",
+    variant
+  } = _b, props = __objRest(_b, [
+    "onChange",
+    "className",
+    "variant"
+  ]);
+  return /* @__PURE__ */ React6.createElement(
+    "input",
+    __spreadProps(__spreadValues({}, props), {
+      onChange: (e) => onChange == null ? void 0 : onChange(e.target.value),
+      className: `${styles6[`hui-${variant}-input`]} ${className}`
+    })
+  );
+};
+
+// src/components/unit/navigation/Link/headed-link.tsx
+import React7 from "react";
 import Link from "next/link";
-import styles6 from "./headed-link.module-US5OGH4P.module.css";
+import styles7 from "./headed-link.module-US5OGH4P.module.css";
 var HeadedLink = (_a) => {
   var _b = _a, {
     children,
@@ -198,37 +220,37 @@ var HeadedLink = (_a) => {
     "onClick",
     "variant"
   ]);
-  return /* @__PURE__ */ React6.createElement(Link, __spreadProps(__spreadValues({}, props), { className: `${styles6[`hui-${variant}-link`]} ${className != null ? className : ""}`, onClick }), children);
+  return /* @__PURE__ */ React7.createElement(Link, __spreadProps(__spreadValues({}, props), { className: `${styles7[`hui-${variant}-link`]} ${className != null ? className : ""}`, onClick }), children);
 };
 
 // src/components/unit/overlays/Modal/headed-modal.tsx
-import React7 from "react";
+import React8 from "react";
 import { Dialog as Dialog2 } from "@headlessui/react";
-import styles7 from "./headed-modal.module-IAQREMUA.module.css";
+import styles8 from "./headed-modal.module-IAQREMUA.module.css";
 var HeadedModal = ({ isOpen, onClose, title, children, variant }) => {
-  return /* @__PURE__ */ React7.createElement(Dialog2, { open: isOpen, onClose, className: styles7[`hui-${variant}-modal`] }, /* @__PURE__ */ React7.createElement("div", { className: styles7[`hui-${variant}-modal-panel`] }, /* @__PURE__ */ React7.createElement(Dialog2.Title, { className: styles7[`hui-${variant}-modal-title`] }, title), children, /* @__PURE__ */ React7.createElement(HeadedButton, { variant, onClick: onClose }, "Close")));
+  return /* @__PURE__ */ React8.createElement(Dialog2, { open: isOpen, onClose, className: styles8[`hui-${variant}-modal`] }, /* @__PURE__ */ React8.createElement("div", { className: styles8[`hui-${variant}-modal-panel`] }, /* @__PURE__ */ React8.createElement(Dialog2.Title, { className: styles8[`hui-${variant}-modal-title`] }, title), children, /* @__PURE__ */ React8.createElement(HeadedButton, { variant, onClick: onClose }, "Close")));
 };
 
 // src/components/unit/overlays/Popover/headed-popover.tsx
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import styles8 from "./headed-popover.module-PW2BTQBJ.module.css";
-import React8 from "react";
+import styles9 from "./headed-popover.module-PW2BTQBJ.module.css";
+import React9 from "react";
 function HeadedPopover({ title, children, variant }) {
-  return /* @__PURE__ */ React8.createElement(Popover, { className: "relative" }, /* @__PURE__ */ React8.createElement(PopoverButton, { className: `${styles8[`hui-${variant}-popover-button`]}` }, title), /* @__PURE__ */ React8.createElement(PopoverPanel, { anchor: "bottom", className: `${styles8[`hui-${variant}-popover-panel`]} flex flex-col` }, children));
+  return /* @__PURE__ */ React9.createElement(Popover, { className: "relative" }, /* @__PURE__ */ React9.createElement(PopoverButton, { className: `${styles9[`hui-${variant}-popover-button`]}` }, title), /* @__PURE__ */ React9.createElement(PopoverPanel, { anchor: "bottom", className: `${styles9[`hui-${variant}-popover-panel`]} flex flex-col` }, children));
 }
 
 // src/components/unit/content/Select/headed-select.tsx
 import { Description, Field, Label, Select } from "@headlessui/react";
-import React9 from "react";
-import styles9 from "./headed-select.module-AOTXMAQC.module.css";
+import React10 from "react";
+import styles10 from "./headed-select.module-AOTXMAQC.module.css";
 var HeadedSelect = ({ options, label, description, onChange, variant }) => {
-  return /* @__PURE__ */ React9.createElement(HeadedCard, { variant }, /* @__PURE__ */ React9.createElement(Field, null, /* @__PURE__ */ React9.createElement(Label, null, label), /* @__PURE__ */ React9.createElement(Description, { className: `${styles9[`hui-${variant}-description`]}` }, description), /* @__PURE__ */ React9.createElement(Select, { name: "status", "aria-label": "Project status", onChange }, options.map((option) => /* @__PURE__ */ React9.createElement("option", { className: `${styles9[`hui-${variant}-select`]}`, key: option, value: option }, option)))));
+  return /* @__PURE__ */ React10.createElement(HeadedCard, { variant }, /* @__PURE__ */ React10.createElement(Field, null, /* @__PURE__ */ React10.createElement(Label, null, label), /* @__PURE__ */ React10.createElement(Description, { className: `${styles10[`hui-${variant}-description`]}` }, description), /* @__PURE__ */ React10.createElement(Select, { name: "status", "aria-label": "Project status", onChange }, options.map((option) => /* @__PURE__ */ React10.createElement("option", { className: `${styles10[`hui-${variant}-select`]}`, key: option, value: option }, option)))));
 };
 
 // src/components/unit/interactive/Switch/headed-switch.tsx
 import { Switch } from "@headlessui/react";
-import React10 from "react";
-import styles10 from "./headed-switch.module-RHD66WUN.module.css";
+import React11 from "react";
+import styles11 from "./headed-switch.module-RHD66WUN.module.css";
 var HeadedSwitch = ({
   checked,
   onChange,
@@ -236,27 +258,27 @@ var HeadedSwitch = ({
   variant,
   label
 }) => {
-  return /* @__PURE__ */ React10.createElement("div", { className: `flex items-center ${className}` }, label && /* @__PURE__ */ React10.createElement("span", { className: styles10[`hui-${variant}-switch-label`] }, label), /* @__PURE__ */ React10.createElement(
+  return /* @__PURE__ */ React11.createElement("div", { className: `flex items-center ${className}` }, label && /* @__PURE__ */ React11.createElement("span", { className: styles11[`hui-${variant}-switch-label`] }, label), /* @__PURE__ */ React11.createElement(
     Switch,
     {
       checked,
       onChange,
-      className: ` ${styles10[`hui-${variant}-switch`]}`
+      className: ` ${styles11[`hui-${variant}-switch`]}`
     }
   ));
 };
 
 // src/components/unit/content/Tabs/headed-tabs.tsx
-import React11 from "react";
+import React12 from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import styles11 from "./headed-tabs.module-Q2DDZXN6.module.css";
+import styles12 from "./headed-tabs.module-Q2DDZXN6.module.css";
 var HeadedTabs = ({ tabs, children, onClick, variant = "primary" /* Primary */ }) => {
-  return /* @__PURE__ */ React11.createElement(TabGroup, null, /* @__PURE__ */ React11.createElement(TabList, { className: styles11[`hui-${variant}-tabs`] }, tabs.map((tab, index) => /* @__PURE__ */ React11.createElement(Tab, { key: index, className: styles11[`hui-${variant}-tab`], onClick }, tab))), /* @__PURE__ */ React11.createElement(TabPanels, null, children.map((content, index) => /* @__PURE__ */ React11.createElement(TabPanel, { key: index, className: styles11[`hui-${variant}-panel`] }, content))));
+  return /* @__PURE__ */ React12.createElement(TabGroup, null, /* @__PURE__ */ React12.createElement(TabList, { className: styles12[`hui-${variant}-tabs`] }, tabs.map((tab, index) => /* @__PURE__ */ React12.createElement(Tab, { key: index, className: styles12[`hui-${variant}-tab`], onClick }, tab))), /* @__PURE__ */ React12.createElement(TabPanels, null, children.map((content, index) => /* @__PURE__ */ React12.createElement(TabPanel, { key: index, className: styles12[`hui-${variant}-panel`] }, content))));
 };
 
 // src/components/unit/overlays/Toast/headed-toast.tsx
-import React12 from "react";
-import styles12 from "./headed-toast.module-NCOECBPH.module.css";
+import React13 from "react";
+import styles13 from "./headed-toast.module-NCOECBPH.module.css";
 var PositionEnum = /* @__PURE__ */ ((PositionEnum2) => {
   PositionEnum2["CENTER"] = "center";
   PositionEnum2["TOP"] = "top";
@@ -333,20 +355,20 @@ var HeadedToast = ({
   if (!isOpen) {
     return null;
   }
-  return /* @__PURE__ */ React12.createElement(
+  return /* @__PURE__ */ React13.createElement(
     "div",
     {
-      className: ` z-10 overflow-y-auto ${styles12[`hui-${variant}-toast`]}`,
+      className: ` z-10 overflow-y-auto ${styles13[`hui-${variant}-toast`]}`,
       style
     },
-    /* @__PURE__ */ React12.createElement(HeadedCard, { variant }, /* @__PURE__ */ React12.createElement("h2", null, title), /* @__PURE__ */ React12.createElement("div", null, children), /* @__PURE__ */ React12.createElement(HeadedButton, { variant, onClick }, "Close"))
+    /* @__PURE__ */ React13.createElement(HeadedCard, { variant }, /* @__PURE__ */ React13.createElement("h2", null, title), /* @__PURE__ */ React13.createElement("div", null, children), /* @__PURE__ */ React13.createElement(HeadedButton, { variant, onClick }, "Close"))
   );
 };
 
 // src/components/nested/content/Carousel/headed-carousel.tsx
-import React13, { useState } from "react";
+import React14, { useState } from "react";
 var HeadedCarousel = ({ children, variant }) => {
-  const childrenArray = React13.Children.toArray(children);
+  const childrenArray = React14.Children.toArray(children);
   const [currentIndex, setCurrentIndex] = useState(0);
   const goBack = () => {
     setCurrentIndex(
@@ -358,14 +380,14 @@ var HeadedCarousel = ({ children, variant }) => {
       (prevIndex) => prevIndex === childrenArray.length - 1 ? 0 : prevIndex + 1
     );
   };
-  return /* @__PURE__ */ React13.createElement("div", { className: "flex-col" }, /* @__PURE__ */ React13.createElement(HeadedCard, { variant }, childrenArray[currentIndex]), /* @__PURE__ */ React13.createElement("div", { className: "flex-row", style: { display: "flex", justifyContent: "space-between" } }, /* @__PURE__ */ React13.createElement(HeadedButton, { variant, onClick: goBack }, " Go Back"), /* @__PURE__ */ React13.createElement(HeadedButton, { variant, onClick: goForward }, " Go Forward")));
+  return /* @__PURE__ */ React14.createElement("div", { className: "flex-col" }, /* @__PURE__ */ React14.createElement(HeadedCard, { variant }, childrenArray[currentIndex]), /* @__PURE__ */ React14.createElement("div", { className: "flex-row", style: { display: "flex", justifyContent: "space-between" } }, /* @__PURE__ */ React14.createElement(HeadedButton, { variant, onClick: goBack }, " Go Back"), /* @__PURE__ */ React14.createElement(HeadedButton, { variant, onClick: goForward }, " Go Forward")));
 };
 
 // src/components/nested/date/Calendar/headed-calendar.tsx
-import React15, { useState as useState2 } from "react";
+import React16, { useState as useState2 } from "react";
 
 // src/components/nested/date/Calendar/headed-calendar-month.tsx
-import React14 from "react";
+import React15 from "react";
 var getMonthDays = (year, month) => {
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
@@ -387,8 +409,8 @@ var getMonthDays = (year, month) => {
   return calendarDays;
 };
 var HeadedCalendarMonth = ({ variant, year, month, events }) => {
-  const days = React14.useMemo(() => getMonthDays(year, month), [year, month]);
-  const eventsMap = React14.useMemo(() => {
+  const days = React15.useMemo(() => getMonthDays(year, month), [year, month]);
+  const eventsMap = React15.useMemo(() => {
     const map = {};
     events.forEach((event) => {
       const dateStr = event.date.toDateString();
@@ -400,17 +422,17 @@ var HeadedCalendarMonth = ({ variant, year, month, events }) => {
     return map;
   }, [events]);
   const options = { year: "numeric", month: "short", day: "numeric" };
-  return /* @__PURE__ */ React14.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "8px" } }, ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((dayName) => /* @__PURE__ */ React14.createElement("div", { key: dayName, style: { fontWeight: "bold", textAlign: "center" } }, dayName)), days.map((dayObj, index) => {
+  return /* @__PURE__ */ React15.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "8px" } }, ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((dayName) => /* @__PURE__ */ React15.createElement("div", { key: dayName, style: { fontWeight: "bold", textAlign: "center" } }, dayName)), days.map((dayObj, index) => {
     if (dayObj.day === null || !dayObj.date) {
-      return /* @__PURE__ */ React14.createElement("div", { key: index });
+      return /* @__PURE__ */ React15.createElement("div", { key: index });
     }
     const dateStr = dayObj.date.toDateString();
     const dayEvents = eventsMap[dateStr] || [];
-    return /* @__PURE__ */ React14.createElement("div", { key: index, style: { border: "1px solid #ccc", padding: "4px" } }, /* @__PURE__ */ React14.createElement("div", { style: { fontWeight: "bold" } }, dayObj.day), dayEvents.map((event, idx) => {
+    return /* @__PURE__ */ React15.createElement("div", { key: index, style: { border: "1px solid #ccc", padding: "4px" } }, /* @__PURE__ */ React15.createElement("div", { style: { fontWeight: "bold" } }, dayObj.day), dayEvents.map((event, idx) => {
       const startStr = event.date.toLocaleDateString(void 0, options);
       const endStr = event.endDate ? event.endDate.toLocaleDateString(void 0, options) : null;
       const dateRange = endStr ? `${startStr} - ${endStr}` : startStr;
-      return /* @__PURE__ */ React14.createElement(HeadedCard, { key: idx, variant }, /* @__PURE__ */ React14.createElement("h2", { style: { fontSize: "0.9em", margin: 0 } }, event.name), /* @__PURE__ */ React14.createElement("p", { style: { fontSize: "0.8em", margin: 0 } }, event.description), /* @__PURE__ */ React14.createElement("p", { style: { fontSize: "0.7em", margin: 0 } }, dateRange));
+      return /* @__PURE__ */ React15.createElement(HeadedCard, { key: idx, variant }, /* @__PURE__ */ React15.createElement("h2", { style: { fontSize: "0.9em", margin: 0 } }, event.name), /* @__PURE__ */ React15.createElement("p", { style: { fontSize: "0.8em", margin: 0 } }, event.description), /* @__PURE__ */ React15.createElement("p", { style: { fontSize: "0.7em", margin: 0 } }, dateRange));
     }));
   }));
 };
@@ -447,11 +469,11 @@ var HeadedCalendar = ({
   const handleNextYear = () => {
     setYear((prev) => prev + 1);
   };
-  return /* @__PURE__ */ React15.createElement("div", null, /* @__PURE__ */ React15.createElement("div", { style: { display: "flex", justifyContent: "center", gap: "10px", marginBottom: "10px" } }, /* @__PURE__ */ React15.createElement(HeadedButton, { variant, onClick: handlePrevYear }, "Previous Year"), /* @__PURE__ */ React15.createElement(HeadedButton, { variant, onClick: handlePrevMonth }, "Previous Month"), /* @__PURE__ */ React15.createElement("div", { style: { fontWeight: "bold" } }, new Date(year, month).toLocaleString(void 0, { month: "long", year: "numeric" })), /* @__PURE__ */ React15.createElement(HeadedButton, { variant, onClick: handleNextMonth }, "Next Month"), /* @__PURE__ */ React15.createElement(HeadedButton, { variant, onClick: handleNextYear }, "Next Year")), /* @__PURE__ */ React15.createElement(HeadedCalendarMonth, { variant, year, month, events }));
+  return /* @__PURE__ */ React16.createElement("div", null, /* @__PURE__ */ React16.createElement("div", { style: { display: "flex", justifyContent: "center", gap: "10px", marginBottom: "10px" } }, /* @__PURE__ */ React16.createElement(HeadedButton, { variant, onClick: handlePrevYear }, "Previous Year"), /* @__PURE__ */ React16.createElement(HeadedButton, { variant, onClick: handlePrevMonth }, "Previous Month"), /* @__PURE__ */ React16.createElement("div", { style: { fontWeight: "bold" } }, new Date(year, month).toLocaleString(void 0, { month: "long", year: "numeric" })), /* @__PURE__ */ React16.createElement(HeadedButton, { variant, onClick: handleNextMonth }, "Next Month"), /* @__PURE__ */ React16.createElement(HeadedButton, { variant, onClick: handleNextYear }, "Next Year")), /* @__PURE__ */ React16.createElement(HeadedCalendarMonth, { variant, year, month, events }));
 };
 
 // src/components/nested/date/DatePicker/headed-date-picker.tsx
-import React16, { useState as useState3 } from "react";
+import React17, { useState as useState3 } from "react";
 var HeadedDatePicker = ({ variant }) => {
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
   const years = Array.from({ length: 10 }, (_, i) => currentYear + i);
@@ -492,7 +514,7 @@ var HeadedDatePicker = ({ variant }) => {
     );
     alert(`Selected Date and Time: ${date.toString()}`);
   };
-  return /* @__PURE__ */ React16.createElement("div", null, /* @__PURE__ */ React16.createElement("div", null, /* @__PURE__ */ React16.createElement("label", { htmlFor: "year" }, "Year:"), /* @__PURE__ */ React16.createElement(
+  return /* @__PURE__ */ React17.createElement("div", null, /* @__PURE__ */ React17.createElement("div", null, /* @__PURE__ */ React17.createElement("label", { htmlFor: "year" }, "Year:"), /* @__PURE__ */ React17.createElement(
     HeadedDropdown,
     {
       options: years.map((yr) => ({ label: yr.toString(), value: yr.toString() })),
@@ -500,7 +522,7 @@ var HeadedDatePicker = ({ variant }) => {
       onChange: (value) => setSelectedYear(value),
       variant
     }
-  )), /* @__PURE__ */ React16.createElement("div", null, /* @__PURE__ */ React16.createElement("label", { htmlFor: "month" }, "Month:"), /* @__PURE__ */ React16.createElement(
+  )), /* @__PURE__ */ React17.createElement("div", null, /* @__PURE__ */ React17.createElement("label", { htmlFor: "month" }, "Month:"), /* @__PURE__ */ React17.createElement(
     HeadedDropdown,
     {
       options: months.map((m) => ({ label: m.label, value: m.value.toString() })),
@@ -508,7 +530,7 @@ var HeadedDatePicker = ({ variant }) => {
       onChange: (value) => setSelectedMonth(value),
       variant
     }
-  )), /* @__PURE__ */ React16.createElement("div", null, /* @__PURE__ */ React16.createElement("label", { htmlFor: "day" }, "Day:"), /* @__PURE__ */ React16.createElement(
+  )), /* @__PURE__ */ React17.createElement("div", null, /* @__PURE__ */ React17.createElement("label", { htmlFor: "day" }, "Day:"), /* @__PURE__ */ React17.createElement(
     HeadedDropdown,
     {
       options: days,
@@ -516,7 +538,7 @@ var HeadedDatePicker = ({ variant }) => {
       onChange: (value) => setSelectedDay(value),
       variant
     }
-  )), /* @__PURE__ */ React16.createElement("div", null, /* @__PURE__ */ React16.createElement("label", { htmlFor: "hour" }, "Hour:"), /* @__PURE__ */ React16.createElement(
+  )), /* @__PURE__ */ React17.createElement("div", null, /* @__PURE__ */ React17.createElement("label", { htmlFor: "hour" }, "Hour:"), /* @__PURE__ */ React17.createElement(
     HeadedDropdown,
     {
       options: hours,
@@ -524,7 +546,7 @@ var HeadedDatePicker = ({ variant }) => {
       onChange: (value) => setSelectedHour(value),
       variant
     }
-  )), /* @__PURE__ */ React16.createElement("div", null, /* @__PURE__ */ React16.createElement("label", { htmlFor: "minute" }, "Minute:"), /* @__PURE__ */ React16.createElement(
+  )), /* @__PURE__ */ React17.createElement("div", null, /* @__PURE__ */ React17.createElement("label", { htmlFor: "minute" }, "Minute:"), /* @__PURE__ */ React17.createElement(
     HeadedDropdown,
     {
       options: minutes,
@@ -532,12 +554,12 @@ var HeadedDatePicker = ({ variant }) => {
       onChange: (value) => setSelectedMinute(value),
       variant
     }
-  )), /* @__PURE__ */ React16.createElement(HeadedButton, { variant, onClick: handleSubmit }, "Submit"));
+  )), /* @__PURE__ */ React17.createElement(HeadedButton, { variant, onClick: handleSubmit }, "Submit"));
 };
 
 // src/components/nested/milestones/Progress/headed-progress.tsx
-import React17 from "react";
-import styles13 from "./headed-progress.module-6PIITCGR.module.css";
+import React18 from "react";
+import styles14 from "./headed-progress.module-6PIITCGR.module.css";
 var HeadedProgress = ({
   progress,
   className = "",
@@ -545,22 +567,22 @@ var HeadedProgress = ({
   variant
 }) => {
   const clampedProgress = Math.min(100, Math.max(0, progress));
-  return /* @__PURE__ */ React17.createElement(
+  return /* @__PURE__ */ React18.createElement(
     "div",
     {
-      className: `${styles13[`hui-${variant}-progress-container`]} ${className}`,
+      className: `${styles14[`hui-${variant}-progress-container`]} ${className}`,
       style
     },
-    /* @__PURE__ */ React17.createElement(
+    /* @__PURE__ */ React18.createElement(
       "div",
       {
-        className: `${styles13[`hui-${variant}-progress-fill`]}`,
+        className: `${styles14[`hui-${variant}-progress-fill`]}`,
         style: { width: `${clampedProgress}%` }
       },
-      /* @__PURE__ */ React17.createElement(
+      /* @__PURE__ */ React18.createElement(
         "div",
         {
-          className: `${styles13[`hui-head`]}`
+          className: `${styles14[`hui-head`]}`
         }
       )
     )
@@ -568,27 +590,27 @@ var HeadedProgress = ({
 };
 
 // src/components/nested/milestones/Stepper/headed-stepper.tsx
-import React18 from "react";
+import React19 from "react";
 var HeadedStepper = ({
   steps,
   currentStepsCompleted,
   variant
 }) => {
   const clampedStepper = Math.min(100, Math.max(0, currentStepsCompleted / (steps.length - 1) * 100));
-  return /* @__PURE__ */ React18.createElement("div", null, /* @__PURE__ */ React18.createElement(HeadedProgress, { progress: clampedStepper, variant }), /* @__PURE__ */ React18.createElement("div", { style: {
+  return /* @__PURE__ */ React19.createElement("div", null, /* @__PURE__ */ React19.createElement(HeadedProgress, { progress: clampedStepper, variant }), /* @__PURE__ */ React19.createElement("div", { style: {
     display: "flex",
     justifyContent: "space-between",
     width: "100%",
     position: "relative",
     marginTop: "20px"
-  } }, steps.map((value, index) => /* @__PURE__ */ React18.createElement("div", { key: index, style: { flex: 1, display: "flex", justifyContent: "center" } }, /* @__PURE__ */ React18.createElement(HeadedCard, { variant }, value)))));
+  } }, steps.map((value, index) => /* @__PURE__ */ React19.createElement("div", { key: index, style: { flex: 1, display: "flex", justifyContent: "center" } }, /* @__PURE__ */ React19.createElement(HeadedCard, { variant }, value)))));
 };
 
 // src/components/nested/date/Timeline/headed-timeline.tsx
-import React20 from "react";
+import React21 from "react";
 
 // src/components/nested/date/event.tsx
-import React19 from "react";
+import React20 from "react";
 var HeadedEvent = ({ variant, name, description, date, endDate }) => {
   const options = { year: "numeric", month: "short", day: "numeric" };
   let startStr = date.toLocaleDateString(void 0, options);
@@ -596,13 +618,13 @@ var HeadedEvent = ({ variant, name, description, date, endDate }) => {
     const endStr = endDate.toLocaleDateString(void 0, options);
     startStr = `${startStr} - ${endStr}`;
   }
-  return /* @__PURE__ */ React19.createElement(HeadedCard, { variant }, /* @__PURE__ */ React19.createElement("h1", null, " ", name), /* @__PURE__ */ React19.createElement("p", null, " ", description), /* @__PURE__ */ React19.createElement("p", null, " ", startStr, " "));
+  return /* @__PURE__ */ React20.createElement(HeadedCard, { variant }, /* @__PURE__ */ React20.createElement("h1", null, " ", name), /* @__PURE__ */ React20.createElement("p", null, " ", description), /* @__PURE__ */ React20.createElement("p", null, " ", startStr, " "));
 };
 
 // src/components/nested/date/Timeline/headed-timeline.tsx
 var HeadedTimeline = ({ variant, events }) => {
   const sortedEvents = [...events].sort((a, b) => a.date.getTime() - b.date.getTime());
-  return /* @__PURE__ */ React20.createElement(React20.Fragment, null, sortedEvents.map((event, index) => /* @__PURE__ */ React20.createElement(HeadedEvent, __spreadProps(__spreadValues({ key: index }, event), { variant }))));
+  return /* @__PURE__ */ React21.createElement(React21.Fragment, null, sortedEvents.map((event, index) => /* @__PURE__ */ React21.createElement(HeadedEvent, __spreadProps(__spreadValues({ key: index }, event), { variant }))));
 };
 export {
   AccordionItem,
@@ -614,6 +636,7 @@ export {
   HeadedDatePicker,
   HeadedDialog,
   HeadedDropdown,
+  HeadedInput,
   HeadedLink,
   HeadedModal,
   HeadedPopover,
