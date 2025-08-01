@@ -35,6 +35,7 @@ export default function Home() {
         updatedStates[variant] = !updatedStates[variant];
         setSwitchStates(updatedStates);
     };
+      const [maxResults, setMaxResults] = useState(10)
 
 
     return (
@@ -67,6 +68,18 @@ export default function Home() {
                             </HeadedUI.AccordionItem>
                         </HeadedUI.HeadedAccordion>
                         <HeadedUI.HeadedButton variant={variant}>Button {variant}</HeadedUI.HeadedButton>
+
+                        <HeadedUI.HeadedInput
+                            variant={variant}
+                          type="number"
+                          placeholder="Max results"
+                          value={maxResults}
+                          onChange={(e) => setMaxResults(Number(e))}
+                          className="w-32"
+                          min={1}
+                          max={100}
+                        />
+
                         <HeadedUI.HeadedCard variant={variant}>Card {variant}</HeadedUI.HeadedCard>
 
                         <HeadedUI.HeadedButton variant={variant} onClick={() => setOpenDialogVariant(variant)}>
