@@ -594,20 +594,20 @@ var HeadedGrid = ({
   let columns, rows;
   if (isAutoHeight) {
     if (fillDirection === "rows") {
-      columns = 3;
+      columns = Math.ceil(Math.sqrt(childCount));
       rows = Math.ceil(childCount / columns);
     } else {
-      rows = 3;
+      rows = Math.ceil(Math.sqrt(childCount));
       columns = Math.ceil(childCount / rows);
     }
   } else {
-    const defaultGridSize = 3;
+    const aspectRatio = typeof width === "number" && typeof height === "number" ? width / height : 1;
     if (fillDirection === "rows") {
-      rows = defaultGridSize;
-      columns = Math.ceil(childCount / rows);
-    } else {
-      columns = defaultGridSize;
+      columns = Math.ceil(Math.sqrt(childCount * aspectRatio));
       rows = Math.ceil(childCount / columns);
+    } else {
+      rows = Math.ceil(Math.sqrt(childCount / aspectRatio));
+      columns = Math.ceil(childCount / rows);
     }
   }
   return /* @__PURE__ */ React18.createElement(HeadedCard, { variant, width: String(width), height: String(height), style: { justifyContent: "center" } }, /* @__PURE__ */ React18.createElement(

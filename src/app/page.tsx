@@ -1,8 +1,7 @@
 "use client"
-import {useState} from "react";
+import React, {useState} from "react";
 import * as HeadedUI from '../index';
-import React from 'react';
-
+import {TextAnimationType} from "@/components/unit/content/TextAnim/headed-text-anim";
 
 
 export default function Home() {
@@ -165,6 +164,11 @@ export default function Home() {
                                 document.getElementById(`switch-${variant}`)!.textContent = `Switch is ${checked ? 'on' : 'off'}`;
                             }}
                         />
+
+                        <HeadedUI.HeadedTextAnim animation={TextAnimationType.FADE_IN}>This text fades in</HeadedUI.HeadedTextAnim>
+                        <HeadedUI.HeadedTextAnim animation={TextAnimationType.COLOR_CYCLE}>This text cycles colour</HeadedUI.HeadedTextAnim>
+                        <HeadedUI.HeadedTextAnim animation={TextAnimationType.TYPEWRITER}>This text animates letter by letter</HeadedUI.HeadedTextAnim>
+                        <HeadedUI.HeadedTextAnim animation={TextAnimationType.SLIDE_UP}>This text slides up</HeadedUI.HeadedTextAnim>
 
                         <HeadedUI.HeadedTabs
                             variant={variant}

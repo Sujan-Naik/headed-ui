@@ -12,6 +12,7 @@ export {HeadedPopover} from '@/components/unit/overlays/Popover/headed-popover';
 export {HeadedSelect} from '@/components/unit/content/Select/headed-select';
 export {HeadedSwitch} from '@/components/unit/interactive/Switch/headed-switch';
 export {HeadedTabs} from '@/components/unit/content/Tabs/headed-tabs';
+export {HeadedTextAnim} from '@/components/unit/content/TextAnim/headed-text-anim';
 export {HeadedToast, PositionEnum} from '@/components/unit/overlays/Toast/headed-toast';
 
 
