@@ -42,7 +42,21 @@ export default function Home() {
             <h1>Date Picker</h1>
             <HeadedUI.HeadedDatePicker variant={HeadedUI.VariantEnum.Primary}/>
 
-
+            <h1>Grid</h1>
+        <HeadedUI.HeadedGrid variant={HeadedUI.VariantEnum.Primary} width={'1024px'} height={'768px'} fillDirection={'rows'}>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#ff6b6b'}}>Red Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#4ecdc4'}}>Teal Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#45b7d1'}}>Blue Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#96ceb4'}}>Green Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#feca57'}}>Yellow Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#ff9ff3'}}>Pink Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#54a0ff'}}>Light Blue Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#5f27cd'}}>Purple Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#00d2d3'}}>Cyan Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#ff6348'}}>Orange Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#2ed573'}}>Lime Square</div>
+          <div style={{width: '256px', height: '256px', backgroundColor: '#747d8c'}}>Gray Square</div>
+        </HeadedUI.HeadedGrid>
             <h1> Timeline </h1>
             <HeadedUI.HeadedTimeline variant={HeadedUI.VariantEnum.Primary} events={eventData}/>
 

@@ -19,6 +19,7 @@ export type {EventProps} from '@/components/nested/date/event';
 export {HeadedCarousel} from '@/components/nested/content/Carousel/headed-carousel';
 export {HeadedCalendar} from '@/components/nested/date/Calendar/headed-calendar';
 export {HeadedDatePicker} from '@/components/nested/date/DatePicker/headed-date-picker';
+export {HeadedGrid} from '@/components/nested/content/Grid/headed-grid';
 export {HeadedProgress} from '@/components/nested/milestones/Progress/headed-progress';
 export {HeadedStepper} from '@/components/nested/milestones/Stepper/headed-stepper';
 export {HeadedTimeline} from '@/components/nested/date/Timeline/headed-timeline';
