@@ -179,6 +179,15 @@ interface DatePickerProps {
 }
 declare const HeadedDatePicker: React.FC<DatePickerProps>;
 
+interface GridProps {
+    children: React.ReactNode;
+    variant: VariantEnum;
+    height: string | number;
+    width: string | number;
+    fillDirection?: 'rows' | 'columns';
+}
+declare const HeadedGrid: React.FC<GridProps>;
+
 interface HeadedProgressProps {
     progress: number;
     className?: string;
@@ -200,4 +209,4 @@ interface TimelineProps {
 }
 declare const HeadedTimeline: React.FC<TimelineProps>;
 
-export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTimeline, HeadedToast, PositionEnum, VariantEnum };
+export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTimeline, HeadedToast, PositionEnum, VariantEnum };

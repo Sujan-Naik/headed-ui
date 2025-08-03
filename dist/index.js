@@ -580,8 +580,57 @@ var HeadedDatePicker = ({ variant }) => {
   )), /* @__PURE__ */ React17.createElement(HeadedButton, { variant, onClick: handleSubmit }, "Submit"));
 };
 
-// src/components/nested/milestones/Progress/headed-progress.tsx
+// src/components/nested/content/Grid/headed-grid.tsx
 import React18 from "react";
+var HeadedGrid = ({
+  children,
+  variant,
+  height,
+  width,
+  fillDirection = "rows"
+}) => {
+  const childCount = React18.Children.count(children);
+  const isAutoHeight = height === "auto";
+  let columns, rows;
+  if (isAutoHeight) {
+    if (fillDirection === "rows") {
+      columns = 3;
+      rows = Math.ceil(childCount / columns);
+    } else {
+      rows = 3;
+      columns = Math.ceil(childCount / rows);
+    }
+  } else {
+    const defaultGridSize = 3;
+    if (fillDirection === "rows") {
+      rows = defaultGridSize;
+      columns = Math.ceil(childCount / rows);
+    } else {
+      columns = defaultGridSize;
+      rows = Math.ceil(childCount / columns);
+    }
+  }
+  return /* @__PURE__ */ React18.createElement(HeadedCard, { variant, width: String(width), height: String(height), style: { justifyContent: "center" } }, /* @__PURE__ */ React18.createElement(
+    "div",
+    {
+      style: {
+        width: "100%",
+        height: "100%",
+        display: "grid",
+        gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+        gridTemplateRows: isAutoHeight ? "auto" : `repeat(${rows}, minmax(0, 1fr))`,
+        placeItems: "center",
+        gridAutoFlow: fillDirection === "rows" ? "row" : "column",
+        gap: "10px",
+        boxSizing: "border-box"
+      }
+    },
+    children
+  ));
+};
+
+// src/components/nested/milestones/Progress/headed-progress.tsx
+import React19 from "react";
 import styles14 from "./headed-progress.module-6PIITCGR.module.css";
 var HeadedProgress = ({
   progress,
@@ -590,19 +639,19 @@ var HeadedProgress = ({
   variant
 }) => {
   const clampedProgress = Math.min(100, Math.max(0, progress));
-  return /* @__PURE__ */ React18.createElement(
+  return /* @__PURE__ */ React19.createElement(
     "div",
     {
       className: `${styles14[`hui-${variant}-progress-container`]} ${className}`,
       style
     },
-    /* @__PURE__ */ React18.createElement(
+    /* @__PURE__ */ React19.createElement(
       "div",
       {
         className: `${styles14[`hui-${variant}-progress-fill`]}`,
         style: { width: `${clampedProgress}%` }
       },
-      /* @__PURE__ */ React18.createElement(
+      /* @__PURE__ */ React19.createElement(
         "div",
         {
           className: `${styles14[`hui-head`]}`
@@ -613,27 +662,27 @@ var HeadedProgress = ({
 };
 
 // src/components/nested/milestones/Stepper/headed-stepper.tsx
-import React19 from "react";
+import React20 from "react";
 var HeadedStepper = ({
   steps,
   currentStepsCompleted,
   variant
 }) => {
   const clampedStepper = Math.min(100, Math.max(0, currentStepsCompleted / (steps.length - 1) * 100));
-  return /* @__PURE__ */ React19.createElement("div", null, /* @__PURE__ */ React19.createElement(HeadedProgress, { progress: clampedStepper, variant }), /* @__PURE__ */ React19.createElement("div", { style: {
+  return /* @__PURE__ */ React20.createElement("div", null, /* @__PURE__ */ React20.createElement(HeadedProgress, { progress: clampedStepper, variant }), /* @__PURE__ */ React20.createElement("div", { style: {
     display: "flex",
     justifyContent: "space-between",
     width: "100%",
     position: "relative",
     marginTop: "20px"
-  } }, steps.map((value, index) => /* @__PURE__ */ React19.createElement("div", { key: index, style: { flex: 1, display: "flex", justifyContent: "center" } }, /* @__PURE__ */ React19.createElement(HeadedCard, { variant }, value)))));
+  } }, steps.map((value, index) => /* @__PURE__ */ React20.createElement("div", { key: index, style: { flex: 1, display: "flex", justifyContent: "center" } }, /* @__PURE__ */ React20.createElement(HeadedCard, { variant }, value)))));
 };
 
 // src/components/nested/date/Timeline/headed-timeline.tsx
-import React21 from "react";
+import React22 from "react";
 
 // src/components/nested/date/event.tsx
-import React20 from "react";
+import React21 from "react";
 var HeadedEvent = ({ variant, name, description, date, endDate }) => {
   const options = { year: "numeric", month: "short", day: "numeric" };
   let startStr = date.toLocaleDateString(void 0, options);
@@ -641,13 +690,13 @@ var HeadedEvent = ({ variant, name, description, date, endDate }) => {
     const endStr = endDate.toLocaleDateString(void 0, options);
     startStr = `${startStr} - ${endStr}`;
   }
-  return /* @__PURE__ */ React20.createElement(HeadedCard, { variant }, /* @__PURE__ */ React20.createElement("h1", null, " ", name), /* @__PURE__ */ React20.createElement("p", null, " ", description), /* @__PURE__ */ React20.createElement("p", null, " ", startStr, " "));
+  return /* @__PURE__ */ React21.createElement(HeadedCard, { variant }, /* @__PURE__ */ React21.createElement("h1", null, " ", name), /* @__PURE__ */ React21.createElement("p", null, " ", description), /* @__PURE__ */ React21.createElement("p", null, " ", startStr, " "));
 };
 
 // src/components/nested/date/Timeline/headed-timeline.tsx
 var HeadedTimeline = ({ variant, events }) => {
   const sortedEvents = [...events].sort((a, b) => a.date.getTime() - b.date.getTime());
-  return /* @__PURE__ */ React21.createElement(React21.Fragment, null, sortedEvents.map((event, index) => /* @__PURE__ */ React21.createElement(HeadedEvent, __spreadProps(__spreadValues({ key: index }, event), { variant }))));
+  return /* @__PURE__ */ React22.createElement(React22.Fragment, null, sortedEvents.map((event, index) => /* @__PURE__ */ React22.createElement(HeadedEvent, __spreadProps(__spreadValues({ key: index }, event), { variant }))));
 };
 export {
   AccordionItem,
@@ -659,6 +708,7 @@ export {
   HeadedDatePicker,
   HeadedDialog,
   HeadedDropdown,
+  HeadedGrid,
   HeadedInput,
   HeadedLink,
   HeadedModal,

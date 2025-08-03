@@ -18,28 +18,30 @@ export const HeadedGrid: React.FC<GridProps> = ({
   fillDirection = 'rows'
 }) => {
   const childCount = React.Children.count(children);
-
   const isAutoHeight = height === 'auto';
 
   let columns, rows;
 
   if (isAutoHeight) {
     if (fillDirection === 'rows') {
-      columns = 3;
+      columns = Math.ceil(Math.sqrt(childCount));
       rows = Math.ceil(childCount / columns);
     } else {
-      rows = 3;
+      rows = Math.ceil(Math.sqrt(childCount));
       columns = Math.ceil(childCount / rows);
     }
   } else {
-    // For non-auto height, use a default grid size or make it configurable
-    const defaultGridSize = 3;
+    // Calculate based on aspect ratio for better space usage
+    const aspectRatio = typeof width === 'number' && typeof height === 'number'
+      ? width / height
+      : 1;
+
     if (fillDirection === 'rows') {
-      rows = defaultGridSize;
-      columns = Math.ceil(childCount / rows);
-    } else {
-      columns = defaultGridSize;
+      columns = Math.ceil(Math.sqrt(childCount * aspectRatio));
       rows = Math.ceil(childCount / columns);
+    } else {
+      rows = Math.ceil(Math.sqrt(childCount / aspectRatio));
+      columns = Math.ceil(childCount / rows);
     }
   }
 
@@ -54,8 +56,8 @@ export const HeadedGrid: React.FC<GridProps> = ({
           gridTemplateRows: isAutoHeight ? 'auto' : `repeat(${rows}, minmax(0, 1fr))`,
           placeItems: 'center',
           gridAutoFlow: fillDirection === 'rows' ? 'row' : 'column',
-            gap: '10px',
-            boxSizing: 'border-box'
+          gap: '10px',
+          boxSizing: 'border-box'
         }}
       >
         {children}

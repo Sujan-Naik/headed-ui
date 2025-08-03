@@ -43,7 +43,7 @@ export default function Home() {
             <HeadedUI.HeadedDatePicker variant={HeadedUI.VariantEnum.Primary}/>
 
             <h1>Grid</h1>
-        <HeadedUI.HeadedGrid variant={HeadedUI.VariantEnum.Primary} width={'1024px'} height={'768px'} fillDirection={'rows'}>
+        <HeadedUI.HeadedGrid variant={HeadedUI.VariantEnum.Primary} width={'auto'} height={'auto'} fillDirection={'rows'}>
           <div style={{width: '256px', height: '256px', backgroundColor: '#ff6b6b'}}>Red Square</div>
           <div style={{width: '256px', height: '256px', backgroundColor: '#4ecdc4'}}>Teal Square</div>
           <div style={{width: '256px', height: '256px', backgroundColor: '#45b7d1'}}>Blue Square</div>
