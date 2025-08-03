@@ -133,6 +133,24 @@ interface HeadedTabsProps {
 }
 declare const HeadedTabs: React.FC<HeadedTabsProps>;
 
+declare enum TextAnimationType {
+    TYPEWRITER = "typewriter",
+    FADE_IN = "fade-in",
+    SLIDE_UP = "slide-up",
+    COLOR_CYCLE = "color-cycle"
+}
+interface HeadedTextAnimProps {
+    children: React.ReactNode;
+    animation: TextAnimationType;
+    className?: string;
+    speed?: number;
+    delay?: number;
+    colors?: string[];
+    tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+    onComplete?: () => void;
+}
+declare const HeadedTextAnim: React.FC<HeadedTextAnimProps>;
+
 interface HeadedToastProps {
     isOpen: boolean;
     onClick: () => void;
@@ -209,4 +227,4 @@ interface TimelineProps {
 }
 declare const HeadedTimeline: React.FC<TimelineProps>;
 
-export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTimeline, HeadedToast, PositionEnum, VariantEnum };
+export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTextAnim, HeadedTimeline, HeadedToast, PositionEnum, VariantEnum };
