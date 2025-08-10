@@ -84,6 +84,8 @@ export default function Home() {
                             Trigger the {variant} Dialog
                         </HeadedUI.HeadedButton>
 
+                        <HeadedUI.HeadedTextArea variant={variant}/>
+
                         <HeadedUI.HeadedDialog
                             variant={variant}
                             isOpen={openDialogVariant === variant}

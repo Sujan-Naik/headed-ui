@@ -83,6 +83,26 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, '
 }
 declare const HeadedInput: React.FC<InputProps>;
 
+interface TextAreaProps {
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    placeholder?: string;
+    className?: string;
+    variant: VariantEnum;
+    disabled?: boolean;
+    rows?: number;
+    cols?: number;
+    maxLength?: number;
+    required?: boolean;
+    readOnly?: boolean;
+    autoFocus?: boolean;
+    'aria-label'?: string;
+    'aria-describedby'?: string;
+    id?: string;
+    name?: string;
+}
+declare const HeadedTextArea: React.FC<TextAreaProps>;
+
 interface PrimaryLinkProps extends LinkProps {
     className?: string;
     children: React.ReactNode;
@@ -227,4 +247,4 @@ interface TimelineProps {
 }
 declare const HeadedTimeline: React.FC<TimelineProps>;
 
-export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTextAnim, HeadedTimeline, HeadedToast, PositionEnum, TextAnimationType, VariantEnum };
+export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTextAnim, HeadedTextArea, HeadedTimeline, HeadedToast, PositionEnum, TextAnimationType, VariantEnum };

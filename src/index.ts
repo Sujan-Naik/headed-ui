@@ -6,6 +6,7 @@ export {HeadedDialog} from '@/components/unit/overlays/Dialog/headed-dialog';
 export {HeadedDropdown} from '@/components/unit/overlays/Dropdown/headed-dropdown';
 export type {HeadedDropdownOption} from '@/components/unit/overlays/Dropdown/headed-dropdown';
 export {HeadedInput} from '@/components/unit/interactive/Input/headed-input';
+export {HeadedTextArea} from '@/components/unit/interactive/TextArea/headed-text-area';
 export {HeadedLink} from '@/components/unit/navigation/Link/headed-link';
 export {HeadedModal} from '@/components/unit/overlays/Modal/headed-modal';
 export {HeadedPopover} from '@/components/unit/overlays/Popover/headed-popover';

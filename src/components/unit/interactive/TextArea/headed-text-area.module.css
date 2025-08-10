@@ -1,0 +1,38 @@
+.hui-base-textarea {
+  border: var(--border-thickness) solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding-thickness);
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.hui-base-textarea:focus {
+  outline: none;
+  border-color: var(--hover);
+}
+
+.hui-primary-textarea {
+  composes: hui-base-textarea;
+  background-color: var(--background-primary);
+  color: var(--foreground-primary);
+}
+
+.hui-secondary-textarea {
+  composes: hui-base-textarea;
+  background-color: var(--background-secondary);
+  color: var(--foreground-secondary);
+}
+
+.hui-tertiary-textarea {
+  composes: hui-base-textarea;
+  background-color: var(--background-tertiary);
+  color: var(--foreground-tertiary);
+}
+
+.hui-outline-textarea {
+  composes: hui-base-textarea;
+  background-color: transparent;
+  color: var(--foreground-primary);
+}
