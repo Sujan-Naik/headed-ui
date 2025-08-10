@@ -221,7 +221,7 @@ var HeadedInput = (_a) => {
   return /* @__PURE__ */ React6.createElement(
     "input",
     __spreadProps(__spreadValues({}, props), {
-      onChange: (e) => onChange == null ? void 0 : onChange(e.target.value),
+      onChange,
       className: `${styles6[`hui-${variant}-input`]} ${className}`
     })
   );
@@ -303,6 +303,13 @@ var HeadedTabs = ({ tabs, children, onClick, variant = "primary" /* Primary */ }
 import { useState, useEffect } from "react";
 import React13 from "react";
 import styles13 from "./headed-text-anim.module-JLVDERQ5.module.css";
+var TextAnimationType = /* @__PURE__ */ ((TextAnimationType2) => {
+  TextAnimationType2["TYPEWRITER"] = "typewriter";
+  TextAnimationType2["FADE_IN"] = "fade-in";
+  TextAnimationType2["SLIDE_UP"] = "slide-up";
+  TextAnimationType2["COLOR_CYCLE"] = "color-cycle";
+  return TextAnimationType2;
+})(TextAnimationType || {});
 var HeadedTextAnim = ({
   children,
   animation,
@@ -794,6 +801,7 @@ export {
   HeadedTimeline,
   HeadedToast,
   PositionEnum,
+  TextAnimationType,
   VariantEnum
 };
 //# sourceMappingURL=index.js.map

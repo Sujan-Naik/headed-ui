@@ -3,7 +3,7 @@ import styles from './headed-input.module.css';
 import {VariantEnum} from '../../../variants'
 
 interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
-  onChange?: (value: string) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   variant: VariantEnum;
 }
 
@@ -16,7 +16,7 @@ export const HeadedInput: React.FC<InputProps> = ({
   return (
     <input
       {...props}
-      onChange={(e) => onChange?.(e.target.value)}
+      onChange={onChange}
       className={`${styles[`hui-${variant}-input`]} ${className}`}
     />
   );

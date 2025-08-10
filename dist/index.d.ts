@@ -78,7 +78,7 @@ interface HeadedDropdownOption {
 declare const HeadedDropdown: React.FC<HeadedDropdownProps>;
 
 interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
-    onChange?: (value: string) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     variant: VariantEnum;
 }
 declare const HeadedInput: React.FC<InputProps>;
@@ -227,4 +227,4 @@ interface TimelineProps {
 }
 declare const HeadedTimeline: React.FC<TimelineProps>;
 
-export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTextAnim, HeadedTimeline, HeadedToast, PositionEnum, VariantEnum };
+export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTextAnim, HeadedTimeline, HeadedToast, PositionEnum, TextAnimationType, VariantEnum };
