@@ -84,7 +84,7 @@ export default function Home() {
                             Trigger the {variant} Dialog
                         </HeadedUI.HeadedButton>
 
-                        <HeadedUI.HeadedTextArea markdown={true} value={'#Headed TextArea Markdown'} variant={variant}/>
+                        <HeadedUI.HeadedTextArea markdown={true} height={'auto'} value={'#Headed TextArea Markdown'} variant={variant}/>
                         <HeadedUI.HeadedTextArea markdown={false} value={'#Without markdown'} variant={variant}/>
 
                         <HeadedUI.HeadedDialog

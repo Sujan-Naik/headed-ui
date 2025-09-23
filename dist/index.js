@@ -249,6 +249,7 @@ var HeadedTextArea = ({
   id,
   name,
   width,
+  height,
   markdown = false
 }) => {
   if (markdown) {
@@ -267,7 +268,7 @@ var HeadedTextArea = ({
         onChange: handleMDChange,
         "data-color-mode": "dark",
         className,
-        style: { width }
+        style: { width, height }
       }
     );
   }
@@ -289,7 +290,7 @@ var HeadedTextArea = ({
       "aria-describedby": ariaDescribedby,
       id,
       name,
-      style: { width }
+      style: { width, height }
     }
   );
 };

@@ -62,7 +62,8 @@ export const HeadedTextArea: React.FC<TextAreaProps> = ({
         onChange={handleMDChange}
         data-color-mode="dark"
         className={className}
-        style={{ width, height }}
+        height={height}
+        style={{ width}}
       />
     );
   }
