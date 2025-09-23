@@ -1,0 +1,67 @@
+.hui-base-dropdown-button {
+    background-color: var(--base-background);
+    border: var(--border-thickness) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--button-padding);
+    width: 100%;
+    cursor: pointer;
+}
+
+.hui-primary-dropdown-button {
+    composes: hui-base-dropdown-button;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+}
+
+.hui-secondary-dropdown-button {
+    composes: hui-base-dropdown-button;
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+}
+
+.hui-tertiary-dropdown-button {
+    composes: hui-base-dropdown-button;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-tertiary);
+}
+
+.hui-outline-dropdown-button {
+    composes: hui-base-dropdown-button;
+    background-color: var(--base-background);
+    color: var(--base-foreground);
+
+}
+
+.hui-base-dropdown-option {
+    background-color: var(--base-background);
+    border: var(--border-thickness) solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    cursor: pointer;
+    padding: var(--padding-thickness);
+}
+
+.hui-primary-dropdown-option {
+    composes: hui-base-dropdown-option;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+}
+
+.hui-secondary-dropdown-option {
+    composes: hui-base-dropdown-option;
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+}
+
+.hui-tertiary-dropdown-option {
+    composes: hui-base-dropdown-option;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-tertiary);
+}
+
+.hui-outline-dropdown-option {
+    composes: hui-base-dropdown-option;
+    background-color: var(--base-background);
+    color: var(--base-foreground);
+
+}

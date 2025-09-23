@@ -1,0 +1,64 @@
+.hui-base-description {
+    background-color: var(--base-background);
+    border-radius: var(--border-radius);
+    padding: var(--padding-thickness);
+    transition: box-shadow 0.4s ease, transform 0.2s ease;
+}
+
+.hui-primary-description {
+    composes: hui-base-description;
+    color: var(--foreground-primary);
+    background-color: var(--background-primary);
+}
+
+.hui-secondary-description {
+    composes: hui-base-description;
+    color: var(--foreground-secondary);
+    background-color: var(--background-secondary);
+}
+
+.hui-tertiary-description {
+    composes: hui-base-description;
+    color: var(--foreground-tertiary);
+    background-color: var(--background-tertiary);
+}
+
+.hui-outline-description {
+    composes: hui-base-description;
+    background-color: transparent;
+    border: var(--border-thickness) solid var(--border-color);
+    color: var(--foreground-primary);
+}
+
+
+.hui-base-select {
+    background-color: var(--base-background);
+    border-radius: var(--border-radius);
+    padding: var(--padding-thickness);
+    transition: box-shadow 0.4s ease, transform 0.2s ease;
+}
+
+.hui-primary-select {
+    composes: hui-base-select;
+    color: var(--foreground-primary);
+    background-color: var(--background-primary);
+}
+
+.hui-secondary-select {
+    composes: hui-base-select;
+    color: var(--foreground-secondary);
+    background-color: var(--background-secondary);
+}
+
+.hui-tertiary-select {
+    composes: hui-base-select;
+    color: var(--foreground-tertiary);
+    background-color: var(--background-tertiary);
+}
+
+.hui-outline-select {
+    composes: hui-base-select;
+    background-color: transparent;
+    border: var(--border-thickness) solid var(--border-color);
+    color: var(--foreground-primary);
+}

@@ -229,6 +229,7 @@ var HeadedInput = (_a) => {
 
 // src/components/unit/interactive/TextArea/headed-text-area.tsx
 import React7 from "react";
+import MDEditor from "@uiw/react-md-editor";
 import styles7 from "./headed-text-area.module-IBSY2BL6.module.css";
 var HeadedTextArea = ({
   value,
@@ -246,8 +247,30 @@ var HeadedTextArea = ({
   "aria-label": ariaLabel,
   "aria-describedby": ariaDescribedby,
   id,
-  name
+  name,
+  width,
+  markdown = false
 }) => {
+  if (markdown) {
+    const handleMDChange = (val) => {
+      if (onChange) {
+        const syntheticEvent = {
+          target: { value: val || "" }
+        };
+        onChange(syntheticEvent);
+      }
+    };
+    return /* @__PURE__ */ React7.createElement(
+      MDEditor,
+      {
+        value,
+        onChange: handleMDChange,
+        "data-color-mode": "dark",
+        className,
+        style: { width }
+      }
+    );
+  }
   return /* @__PURE__ */ React7.createElement(
     "textarea",
     {
@@ -265,7 +288,8 @@ var HeadedTextArea = ({
       "aria-label": ariaLabel,
       "aria-describedby": ariaDescribedby,
       id,
-      name
+      name,
+      style: { width }
     }
   );
 };
@@ -309,8 +333,31 @@ function HeadedPopover({ title, children, variant }) {
 import { Description, Field, Label, Select } from "@headlessui/react";
 import React11 from "react";
 import styles11 from "./headed-select.module-AOTXMAQC.module.css";
-var HeadedSelect = ({ options, label, description, onChange, variant }) => {
-  return /* @__PURE__ */ React11.createElement(HeadedCard, { variant }, /* @__PURE__ */ React11.createElement(Field, null, /* @__PURE__ */ React11.createElement(Label, null, label), /* @__PURE__ */ React11.createElement(Description, { className: `${styles11[`hui-${variant}-description`]}` }, description), /* @__PURE__ */ React11.createElement(Select, { name: "status", "aria-label": "Project status", onChange }, options.map((option) => /* @__PURE__ */ React11.createElement("option", { className: `${styles11[`hui-${variant}-select`]}`, key: option, value: option }, option)))));
+var HeadedSelect = ({
+  options,
+  label,
+  description,
+  value,
+  onChange,
+  variant,
+  name,
+  required = false,
+  disabled = false,
+  placeholder = "Select an option"
+}) => {
+  return /* @__PURE__ */ React11.createElement(HeadedCard, { variant }, /* @__PURE__ */ React11.createElement(Field, null, /* @__PURE__ */ React11.createElement(Label, null, label, required && " *"), description && /* @__PURE__ */ React11.createElement(Description, { className: styles11[`hui-${variant}-description`] }, description), /* @__PURE__ */ React11.createElement(
+    Select,
+    {
+      name,
+      value,
+      onChange,
+      required,
+      disabled,
+      className: styles11[`hui-${variant}-select`]
+    },
+    /* @__PURE__ */ React11.createElement("option", { value: "", disabled: true }, placeholder),
+    options.map((option) => /* @__PURE__ */ React11.createElement("option", { key: option, value: option }, option))
+  )));
 };
 
 // src/components/unit/interactive/Switch/headed-switch.tsx

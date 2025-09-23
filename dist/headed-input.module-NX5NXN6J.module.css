@@ -1,0 +1,48 @@
+.hui-base-input {
+    border: var(--border-thickness) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding-thickness);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.hui-primary-input {
+    composes: hui-base-input;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+}
+
+.hui-primary-input:hover {
+    border-color: var(--hover);
+}
+
+.hui-secondary-input {
+    composes: hui-base-input;
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+}
+
+.hui-secondary-input:hover {
+    border-color: var(--hover);
+}
+
+.hui-tertiary-input {
+    composes: hui-base-input;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-tertiary);
+}
+
+.hui-tertiary-input:hover {
+    border-color: var(--hover);
+}
+
+.hui-outline-input {
+    composes: hui-base-input;
+    background-color: transparent;
+    color: var(--foreground-primary);
+}
+
+.hui-outline-input:hover {
+    border-color: var(--hover);
+}

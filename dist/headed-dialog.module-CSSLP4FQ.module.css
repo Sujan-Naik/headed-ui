@@ -1,0 +1,27 @@
+.hui-base-dialog {
+    background-color: var(--base-background);
+    border-radius: var(--border-radius);
+    /*max-width: var(--dialog-max-width);*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+.hui-primary-dialog {
+    composes: hui-base-dialog;
+}
+
+.hui-secondary-dialog {
+    composes: hui-base-dialog;
+}
+
+.hui-tertiary-dialog {
+    composes: hui-base-dialog;
+}
+
+.hui-outline-dialog {
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    /*max-width: var(--dialog-max-width);*/
+    box-shadow: none;
+    padding: 2rem;
+}

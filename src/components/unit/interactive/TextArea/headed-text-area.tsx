@@ -1,4 +1,5 @@
 import React from 'react';
+import MDEditor from '@uiw/react-md-editor';
 import styles from './headed-text-area.module.css';
 import {VariantEnum} from '../../../variants';
 
@@ -19,6 +20,9 @@ interface TextAreaProps {
   'aria-describedby'?: string;
   id?: string;
   name?: string;
+  width?: string | number;
+  height?: string | number;
+  markdown: boolean;
 }
 
 export const HeadedTextArea: React.FC<TextAreaProps> = ({
@@ -37,8 +41,32 @@ export const HeadedTextArea: React.FC<TextAreaProps> = ({
   'aria-label': ariaLabel,
   'aria-describedby': ariaDescribedby,
   id,
-  name
+  name,
+  width,
+    height,
+  markdown = false
 }) => {
+  if (markdown) {
+    const handleMDChange = (val?: string) => {
+      if (onChange) {
+        const syntheticEvent = {
+          target: { value: val || '' }
+        } as React.ChangeEvent<HTMLTextAreaElement>;
+        onChange(syntheticEvent);
+      }
+    };
+
+    return (
+      <MDEditor
+        value={value}
+        onChange={handleMDChange}
+        data-color-mode="dark"
+        className={className}
+        style={{ width, height }}
+      />
+    );
+  }
+
   return (
     <textarea
       value={value}
@@ -56,6 +84,7 @@ export const HeadedTextArea: React.FC<TextAreaProps> = ({
       aria-describedby={ariaDescribedby}
       id={id}
       name={name}
+      style={{ width, height }}
     />
   );
 };
