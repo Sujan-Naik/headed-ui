@@ -1,3 +1,5 @@
+'use client'
+
 import {Switch} from '@headlessui/react'
 import React from 'react'
 import styles from './headed-switch.module.css'

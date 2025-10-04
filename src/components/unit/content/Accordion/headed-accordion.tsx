@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react';
 import styles from './headed-accordion.module.css';
@@ -14,7 +15,8 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({title, children, va
         {({open}) => (
             <div className={`${styles[`hui-${variant}-accordion`]} ${open ? styles[`open`] : ''}`} style={{
                 flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center'
+                alignItems: 'center', justifyContent: 'center',
+                width: '100'
             }}>
                 <DisclosureButton className={`${styles[`hui-${variant}-accordion-title`]}`}>
                     <p>{title} <a className={styles[`accordion-arrow`]}> {open ? '▲' : '▼'} </a></p>

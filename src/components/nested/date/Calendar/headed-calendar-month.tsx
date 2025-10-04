@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import {HeadedCard} from "@/components/unit/content/Card/headed-card";
 import {VariantEnum} from "@/components/variants";

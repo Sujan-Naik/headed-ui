@@ -1,3 +1,5 @@
+'use client'
+
 import {Button} from '@headlessui/react';
 import React from 'react';
 import styles from './headed-button.module.css';

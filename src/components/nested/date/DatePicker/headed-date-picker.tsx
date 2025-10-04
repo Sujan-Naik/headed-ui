@@ -1,3 +1,5 @@
+'use client'
+
 import React, {SetStateAction, useState} from 'react';
 import {HeadedDropdown} from "@/components/unit/overlays/Dropdown/headed-dropdown";
 import {VariantEnum} from "@/components/variants";

@@ -94,6 +94,7 @@
     padding: var(--accordion-padding);
     overflow: hidden;
     border: var(--border-thickness) solid var(--border-color);
+    width: 100%;
 }
 
 .hui-primary-accordion-content {

@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import styles from './headed-link-icon.module.css';
 

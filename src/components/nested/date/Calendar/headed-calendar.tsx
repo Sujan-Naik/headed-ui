@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useState} from "react";
 import {HeadedCalendarMonth} from "./headed-calendar-month"; // import the month view
 import {VariantEnum} from "@/components/variants";

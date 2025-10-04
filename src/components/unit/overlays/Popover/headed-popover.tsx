@@ -1,3 +1,5 @@
+'use client'
+
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/react';
 import {VariantEnum} from '../../../variants';
 import styles from './headed-popover.module.css'

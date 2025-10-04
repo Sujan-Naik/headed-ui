@@ -1,3 +1,5 @@
+'use client'
+
 import {VariantEnum} from "@/components/variants";
 import React from "react";
 import {EventProps, HeadedEvent} from "@/components/nested/date/event";

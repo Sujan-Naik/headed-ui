@@ -42,11 +42,12 @@ var VariantEnum = /* @__PURE__ */ ((VariantEnum2) => {
 // src/components/unit/content/Accordion/headed-accordion.tsx
 import React from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
-import styles from "./headed-accordion.module-D4G5HC6N.module.css";
+import styles from "./headed-accordion.module-INQTZ4TC.module.css";
 var AccordionItem = ({ title, children, variant }) => /* @__PURE__ */ React.createElement(Disclosure, null, ({ open }) => /* @__PURE__ */ React.createElement("div", { className: `${styles[`hui-${variant}-accordion`]} ${open ? styles[`open`] : ""}`, style: {
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center"
+  justifyContent: "center",
+  width: "100"
 } }, /* @__PURE__ */ React.createElement(DisclosureButton, { className: `${styles[`hui-${variant}-accordion-title`]}` }, /* @__PURE__ */ React.createElement("p", null, title, " ", /* @__PURE__ */ React.createElement("a", { className: styles[`accordion-arrow`] }, " ", open ? "\u25B2" : "\u25BC", " "))), /* @__PURE__ */ React.createElement(DisclosurePanel, { className: `${styles[`hui-${variant}-accordion-content`]}` }, children)));
 var HeadedAccordion = ({ children }) => {
   return /* @__PURE__ */ React.createElement(React.Fragment, null, children);
@@ -268,7 +269,8 @@ var HeadedTextArea = ({
         onChange: handleMDChange,
         "data-color-mode": "dark",
         className,
-        style: { width, height }
+        height,
+        style: { width }
       }
     );
   }
@@ -357,7 +359,10 @@ var HeadedSelect = ({
       className: styles11[`hui-${variant}-select`]
     },
     /* @__PURE__ */ React11.createElement("option", { value: "", disabled: true }, placeholder),
-    options.map((option) => /* @__PURE__ */ React11.createElement("option", { key: option, value: option }, option))
+    options.map((opt) => {
+      const option = typeof opt === "string" ? { value: opt, label: opt } : opt;
+      return /* @__PURE__ */ React11.createElement("option", { key: option.value, value: option.value }, option.label);
+    })
   )));
 };
 

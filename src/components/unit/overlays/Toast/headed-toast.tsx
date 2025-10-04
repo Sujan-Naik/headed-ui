@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import styles from './headed-toast.module.css';
 import {HeadedButton} from "@/components/unit/interactive/Button/headed-button";

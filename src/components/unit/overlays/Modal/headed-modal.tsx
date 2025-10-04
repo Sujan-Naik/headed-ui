@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {Dialog} from '@headlessui/react';
 import styles from './headed-modal.module.css';

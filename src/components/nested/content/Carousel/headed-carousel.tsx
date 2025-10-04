@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useState} from "react";
 import {HeadedButton} from "@/components/unit/interactive/Button/headed-button";
 import {VariantEnum} from "@/components/variants";

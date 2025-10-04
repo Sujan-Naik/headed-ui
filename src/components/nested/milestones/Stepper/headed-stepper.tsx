@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {VariantEnum} from "@/components/variants";
 import {HeadedProgress} from "@/components/nested/milestones/Progress/headed-progress";

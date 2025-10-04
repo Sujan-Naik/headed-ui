@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import styles from './headed-progress.module.css';
 import {VariantEnum} from "@/components/variants";

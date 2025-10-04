@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import MDEditor from '@uiw/react-md-editor';
 import styles from './headed-text-area.module.css';

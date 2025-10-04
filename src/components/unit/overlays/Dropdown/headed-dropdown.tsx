@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {Listbox, ListboxButton, ListboxOption, ListboxOptions} from '@headlessui/react';
 import styles from './headed-dropdown.module.css';
