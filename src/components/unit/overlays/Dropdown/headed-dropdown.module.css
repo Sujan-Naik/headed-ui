@@ -38,7 +38,8 @@
     border-radius: var(--border-radius);
     width: 100%;
     cursor: pointer;
-    padding: var(--padding-thickness);
+    padding-top: var(--padding-thickness);
+    padding-bottom: var(--padding-thickness);
 }
 
 .hui-primary-dropdown-option {

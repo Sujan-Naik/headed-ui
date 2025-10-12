@@ -86,7 +86,7 @@
 .hui-tertiary-accordion-title:hover,
 .hui-outline-accordion-title:hover {
     color: var(--hover);
-    transform: scale(1.02);
+    /*transform: scale(1.02);*/
 }
 
 
@@ -94,7 +94,6 @@
     padding: var(--accordion-padding);
     overflow: hidden;
     border: var(--border-thickness) solid var(--border-color);
-    width: 100%;
 }
 
 .hui-primary-accordion-content {

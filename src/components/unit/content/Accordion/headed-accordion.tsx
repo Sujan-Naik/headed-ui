@@ -15,8 +15,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({title, children, va
         {({open}) => (
             <div className={`${styles[`hui-${variant}-accordion`]} ${open ? styles[`open`] : ''}`} style={{
                 flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center',
-                width: '100'
+                alignItems: 'center', justifyContent: 'center'
             }}>
                 <DisclosureButton className={`${styles[`hui-${variant}-accordion-title`]}`}>
                     <p>{title} <a className={styles[`accordion-arrow`]}> {open ? '▲' : '▼'} </a></p>

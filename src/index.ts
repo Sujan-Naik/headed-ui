@@ -25,3 +25,7 @@ export {HeadedGrid} from '@/components/nested/content/Grid/headed-grid';
 export {HeadedProgress} from '@/components/nested/milestones/Progress/headed-progress';
 export {HeadedStepper} from '@/components/nested/milestones/Stepper/headed-stepper';
 export {HeadedTimeline} from '@/components/nested/date/Timeline/headed-timeline';
+
+
+export * from './ThemeProvider'; // Add this
+export * from './themes'; // Add this

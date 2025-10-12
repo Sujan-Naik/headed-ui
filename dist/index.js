@@ -42,12 +42,11 @@ var VariantEnum = /* @__PURE__ */ ((VariantEnum2) => {
 // src/components/unit/content/Accordion/headed-accordion.tsx
 import React from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
-import styles from "./headed-accordion.module-INQTZ4TC.module.css";
+import styles from "./headed-accordion.module-XQJOD7EB.module.css";
 var AccordionItem = ({ title, children, variant }) => /* @__PURE__ */ React.createElement(Disclosure, null, ({ open }) => /* @__PURE__ */ React.createElement("div", { className: `${styles[`hui-${variant}-accordion`]} ${open ? styles[`open`] : ""}`, style: {
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  width: "100"
+  justifyContent: "center"
 } }, /* @__PURE__ */ React.createElement(DisclosureButton, { className: `${styles[`hui-${variant}-accordion-title`]}` }, /* @__PURE__ */ React.createElement("p", null, title, " ", /* @__PURE__ */ React.createElement("a", { className: styles[`accordion-arrow`] }, " ", open ? "\u25B2" : "\u25BC", " "))), /* @__PURE__ */ React.createElement(DisclosurePanel, { className: `${styles[`hui-${variant}-accordion-content`]}` }, children)));
 var HeadedAccordion = ({ children }) => {
   return /* @__PURE__ */ React.createElement(React.Fragment, null, children);
@@ -188,7 +187,7 @@ var HeadedDialog = ({ isOpen, onClick, title, children, variant, position }) => 
 // src/components/unit/overlays/Dropdown/headed-dropdown.tsx
 import React5 from "react";
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
-import styles5 from "./headed-dropdown.module-W6ARFRBT.module.css";
+import styles5 from "./headed-dropdown.module-PL3LSUAN.module.css";
 var HeadedDropdown = ({ options, horizontal, selected, onChange, variant }) => {
   return /* @__PURE__ */ React5.createElement(Listbox, { horizontal, value: selected, onChange }, /* @__PURE__ */ React5.createElement("div", { className: "relative" }, /* @__PURE__ */ React5.createElement(ListboxButton, { className: styles5[`hui-${variant}-dropdown-button`] }, selected), /* @__PURE__ */ React5.createElement(ListboxOptions, { className: "absolute z-10", style: {
     display: "flex",
@@ -262,39 +261,77 @@ var HeadedTextArea = ({
         onChange(syntheticEvent);
       }
     };
+    if (onChange) {
+      return /* @__PURE__ */ React7.createElement(
+        MDEditor,
+        {
+          value,
+          onChange: handleMDChange,
+          "data-color-mode": "dark",
+          className,
+          height,
+          style: { width },
+          autoCapitalize: "off"
+        }
+      );
+    } else {
+      return /* @__PURE__ */ React7.createElement(
+        MDEditor,
+        {
+          autoCapitalize: "none",
+          defaultValue: value,
+          "data-color-mode": "dark",
+          className,
+          height,
+          style: { width }
+        }
+      );
+    }
+  }
+  if (onChange) {
     return /* @__PURE__ */ React7.createElement(
-      MDEditor,
+      "textarea",
       {
         value,
-        onChange: handleMDChange,
-        "data-color-mode": "dark",
-        className,
-        height,
-        style: { width }
+        onChange,
+        placeholder,
+        className: `${styles7[`hui-${variant}-textarea`]} ${className}`,
+        disabled,
+        rows,
+        cols,
+        maxLength,
+        required,
+        readOnly,
+        autoFocus,
+        "aria-label": ariaLabel,
+        "aria-describedby": ariaDescribedby,
+        id,
+        name,
+        style: { width, height }
+      }
+    );
+  } else {
+    return /* @__PURE__ */ React7.createElement(
+      "textarea",
+      {
+        defaultValue: value,
+        placeholder,
+        className: `${styles7[`hui-${variant}-textarea`]} ${className}`,
+        disabled,
+        rows,
+        cols,
+        maxLength,
+        required,
+        readOnly,
+        autoFocus,
+        "aria-label": ariaLabel,
+        "aria-describedby": ariaDescribedby,
+        id,
+        name,
+        style: { width, height }
       }
     );
   }
-  return /* @__PURE__ */ React7.createElement(
-    "textarea",
-    {
-      value,
-      onChange,
-      placeholder,
-      className: `${styles7[`hui-${variant}-textarea`]} ${className}`,
-      disabled,
-      rows,
-      cols,
-      maxLength,
-      required,
-      readOnly,
-      autoFocus,
-      "aria-label": ariaLabel,
-      "aria-describedby": ariaDescribedby,
-      id,
-      name,
-      style: { width, height }
-    }
-  );
 };
 
 // src/components/unit/navigation/Link/headed-link.tsx
@@ -873,6 +910,189 @@ var HeadedTimeline = ({ variant, events }) => {
   const sortedEvents = [...events].sort((a, b) => a.date.getTime() - b.date.getTime());
   return /* @__PURE__ */ React24.createElement(React24.Fragment, null, sortedEvents.map((event, index) => /* @__PURE__ */ React24.createElement(HeadedEvent, __spreadProps(__spreadValues({ key: index }, event), { variant }))));
 };
+
+// src/ThemeProvider.tsx
+import React25, { createContext, useContext, useState as useState5, useEffect as useEffect2 } from "react";
+
+// src/themes.ts
+var defaultThemes = {
+  light: {
+    highlight: "#e3f2fd",
+    baseBackground: "#ffffff",
+    baseForeground: "#1a1a1a",
+    hover: "#f5f5f5",
+    backgroundPrimary: "#2196F3",
+    foregroundPrimary: "#ffffff",
+    backgroundSecondary: "#f5f5f5",
+    foregroundSecondary: "#333333",
+    backgroundTertiary: "#e0e0e0",
+    foregroundTertiary: "#555555",
+    borderRadius: "8px",
+    borderColor: "#e0e0e0",
+    borderThickness: "1px",
+    paddingThickness: "16px",
+    modalMaxWidth: "800px",
+    modalMinWidth: "400px",
+    buttonPadding: "0.5rem 1rem",
+    accordionPadding: "0.75rem",
+    tabHeight: "48px",
+    linkColor: "#f6f6f6",
+    linkIconSize: "4px",
+    fontFamily: "system-ui, -apple-system, sans-serif"
+  },
+  dark: {
+    highlight: "#2a2a2a",
+    baseBackground: "#121212",
+    baseForeground: "#e0e0e0",
+    hover: "#2a2a2a",
+    backgroundPrimary: "#1e88e5",
+    foregroundPrimary: "#ffffff",
+    backgroundSecondary: "#1e1e1e",
+    foregroundSecondary: "#b0b0b0",
+    backgroundTertiary: "#2a2a2a",
+    foregroundTertiary: "#9e9e9e",
+    borderRadius: "8px",
+    borderColor: "#333333",
+    borderThickness: "1px",
+    paddingThickness: "16px",
+    modalMaxWidth: "800px",
+    modalMinWidth: "400px",
+    buttonPadding: "0.5rem 1rem",
+    accordionPadding: "0.75rem",
+    tabHeight: "48px",
+    linkColor: "#42a5f5",
+    linkIconSize: "4px",
+    fontFamily: "system-ui, -apple-system, sans-serif"
+  },
+  sunset: {
+    highlight: "#FFE5B4",
+    baseBackground: "#FFF5E6",
+    baseForeground: "#2C1810",
+    hover: "#E67E22",
+    backgroundPrimary: "#E67E22",
+    foregroundPrimary: "#FFF3E0",
+    backgroundSecondary: "#D35400",
+    foregroundSecondary: "#FFE0B2",
+    backgroundTertiary: "#C0392B",
+    foregroundTertiary: "#FFCCBC",
+    borderRadius: "20px",
+    borderColor: "#F39C12",
+    borderThickness: "4px",
+    paddingThickness: "12px",
+    modalMaxWidth: "800px",
+    modalMinWidth: "400px",
+    buttonPadding: "0.6rem 1.2rem",
+    accordionPadding: "0.85rem",
+    tabHeight: "52px",
+    linkColor: "#E74C3C",
+    linkIconSize: "4px",
+    fontFamily: '"Georgia", "Times New Roman", serif'
+  },
+  ocean: {
+    highlight: "#B2EBF2",
+    baseBackground: "#E0F7FA",
+    baseForeground: "#004D40",
+    hover: "#00897B",
+    backgroundPrimary: "#00796B",
+    foregroundPrimary: "#E0F2F1",
+    backgroundSecondary: "#00695C",
+    foregroundSecondary: "#B2DFDB",
+    backgroundTertiary: "#004D40",
+    foregroundTertiary: "#80CBC4",
+    borderRadius: "18px",
+    borderColor: "#4DB6AC",
+    borderThickness: "3px",
+    paddingThickness: "10px",
+    modalMaxWidth: "800px",
+    modalMinWidth: "400px",
+    buttonPadding: "0.5rem 1rem",
+    accordionPadding: "0.75rem",
+    tabHeight: "50px",
+    linkColor: "#26A69A",
+    linkIconSize: "4px",
+    fontFamily: '"Trebuchet MS", "Lucida Sans", sans-serif'
+  },
+  neon: {
+    highlight: "#FF1493",
+    baseBackground: "#0D0221",
+    baseForeground: "#F0F0F0",
+    hover: "#FF6EC7",
+    backgroundPrimary: "#7209B7",
+    foregroundPrimary: "#F72585",
+    backgroundSecondary: "#560BAD",
+    foregroundSecondary: "#B5179E",
+    backgroundTertiary: "#3A0CA3",
+    foregroundTertiary: "#4CC9F0",
+    borderRadius: "12px",
+    borderColor: "#F72585",
+    borderThickness: "3px",
+    paddingThickness: "12px",
+    modalMaxWidth: "800px",
+    modalMinWidth: "400px",
+    buttonPadding: "0.6rem 1.4rem",
+    accordionPadding: "0.8rem",
+    tabHeight: "54px",
+    linkColor: "#4CC9F0",
+    linkIconSize: "5px",
+    fontFamily: '"Courier New", "Consolas", monospace'
+  },
+  forest: {
+    highlight: "#C8E6C9",
+    baseBackground: "#F1F8E9",
+    baseForeground: "#1B5E20",
+    hover: "#66BB6A",
+    backgroundPrimary: "#388E3C",
+    foregroundPrimary: "#E8F5E9",
+    backgroundSecondary: "#2E7D32",
+    foregroundSecondary: "#C8E6C9",
+    backgroundTertiary: "#1B5E20",
+    foregroundTertiary: "#A5D6A7",
+    borderRadius: "16px",
+    borderColor: "#81C784",
+    borderThickness: "4px",
+    paddingThickness: "10px",
+    modalMaxWidth: "800px",
+    modalMinWidth: "400px",
+    buttonPadding: "0.5rem 1rem",
+    accordionPadding: "0.75rem",
+    tabHeight: "50px",
+    linkColor: "#4CAF50",
+    linkIconSize: "4px",
+    fontFamily: '"Verdana", "Geneva", sans-serif'
+  }
+};
+
+// src/ThemeProvider.tsx
+var ThemeContext = createContext(void 0);
+var useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error("useTheme must be used within a ThemeProvider");
+  return context;
+};
+var ThemeProvider = ({
+  children,
+  initialTheme = "light",
+  customThemes = {}
+}) => {
+  const allThemes = __spreadValues(__spreadValues({}, defaultThemes), customThemes);
+  const [theme, setTheme] = useState5(initialTheme);
+  useEffect2(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme && allThemes[savedTheme]) setTheme(savedTheme);
+  }, []);
+  useEffect2(() => {
+    const currentTheme = allThemes[theme];
+    if (currentTheme) {
+      const root = document.documentElement;
+      Object.entries(currentTheme).forEach(([key, value]) => {
+        root.style.setProperty(`--${key.replace(/([A-Z])/g, "-$1").toLowerCase()}`, value);
+      });
+      document.body.style.fontFamily = currentTheme.fontFamily;
+      localStorage.setItem("theme", theme);
+    }
+  }, [theme, allThemes]);
+  return /* @__PURE__ */ React25.createElement(ThemeContext.Provider, { value: { theme, setTheme, themes: allThemes } }, children);
+};
 export {
   AccordionItem,
   HeadedAccordion,
@@ -899,6 +1119,9 @@ export {
   HeadedToast,
   PositionEnum,
   TextAnimationType,
-  VariantEnum
+  ThemeProvider,
+  VariantEnum,
+  defaultThemes,
+  useTheme
 };
 //# sourceMappingURL=index.js.map

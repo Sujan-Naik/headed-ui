@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, MouseEventHandler } from 'react';
+import React, { ChangeEventHandler, MouseEventHandler, ReactNode } from 'react';
 import { LinkProps } from 'next/link';
 
 declare enum VariantEnum {
@@ -259,4 +259,43 @@ interface TimelineProps {
 }
 declare const HeadedTimeline: React.FC<TimelineProps>;
 
-export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTextAnim, HeadedTextArea, HeadedTimeline, HeadedToast, PositionEnum, TextAnimationType, VariantEnum };
+type Theme = {
+    highlight: string;
+    baseBackground: string;
+    baseForeground: string;
+    hover: string;
+    backgroundPrimary: string;
+    foregroundPrimary: string;
+    backgroundSecondary: string;
+    foregroundSecondary: string;
+    backgroundTertiary: string;
+    foregroundTertiary: string;
+    borderRadius: string;
+    borderColor: string;
+    borderThickness: string;
+    paddingThickness: string;
+    modalMaxWidth: string;
+    modalMinWidth: string;
+    buttonPadding: string;
+    accordionPadding: string;
+    tabHeight: string;
+    linkColor: string;
+    linkIconSize: string;
+    fontFamily: string;
+};
+declare const defaultThemes: Record<string, Theme>;
+
+type ThemeContextType = {
+    theme: string;
+    setTheme: (themeName: string) => void;
+    themes: Record<string, Theme>;
+};
+declare const useTheme: () => ThemeContextType;
+type ThemeProviderProps = {
+    children: ReactNode;
+    initialTheme?: string;
+    customThemes?: Record<string, Theme>;
+};
+declare const ThemeProvider: React.FC<ThemeProviderProps>;
+
+export { AccordionItem, type EventProps, HeadedAccordion, HeadedButton, HeadedCalendar, HeadedCard, HeadedCarousel, HeadedDatePicker, HeadedDialog, HeadedDropdown, type HeadedDropdownOption, HeadedGrid, HeadedInput, HeadedLink, HeadedModal, HeadedPopover, HeadedProgress, HeadedSelect, HeadedStepper, HeadedSwitch, HeadedTabs, HeadedTextAnim, HeadedTextArea, HeadedTimeline, HeadedToast, PositionEnum, TextAnimationType, type Theme, ThemeProvider, VariantEnum, defaultThemes, useTheme };

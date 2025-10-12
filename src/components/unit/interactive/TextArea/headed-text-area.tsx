@@ -58,36 +58,70 @@ export const HeadedTextArea: React.FC<TextAreaProps> = ({
       }
     };
 
-    return (
-      <MDEditor
-        value={value}
-        onChange={handleMDChange}
-        data-color-mode="dark"
-        className={className}
-        height={height}
-        style={{ width}}
-      />
-    );
+    if (onChange) {
+      return (
+          <MDEditor
+              value={value}
+              onChange={handleMDChange}
+              data-color-mode="dark"
+              className={className}
+              height={height}
+              style={{width}}
+              autoCapitalize={'off'}
+          />
+      );
+    } else {
+      return (<MDEditor
+                        autoCapitalize={'none'}
+
+              defaultValue={value}
+              data-color-mode="dark"
+              className={className}
+              height={height}
+              style={{width}}
+          />)
+    }
   }
 
-  return (
-    <textarea
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      className={`${styles[`hui-${variant}-textarea`]} ${className}`}
-      disabled={disabled}
-      rows={rows}
-      cols={cols}
-      maxLength={maxLength}
-      required={required}
-      readOnly={readOnly}
-      autoFocus={autoFocus}
-      aria-label={ariaLabel}
-      aria-describedby={ariaDescribedby}
-      id={id}
-      name={name}
-      style={{ width, height }}
-    />
-  );
+  if (onChange) {
+    return (
+
+        <textarea
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className={`${styles[`hui-${variant}-textarea`]} ${className}`}
+            disabled={disabled}
+            rows={rows}
+            cols={cols}
+            maxLength={maxLength}
+            required={required}
+            readOnly={readOnly}
+            autoFocus={autoFocus}
+            aria-label={ariaLabel}
+            aria-describedby={ariaDescribedby}
+            id={id}
+            name={name}
+            style={{width, height}}
+        />
+    );
+  } else {
+    return (<textarea
+            defaultValue={value}
+            placeholder={placeholder}
+            className={`${styles[`hui-${variant}-textarea`]} ${className}`}
+            disabled={disabled}
+            rows={rows}
+            cols={cols}
+            maxLength={maxLength}
+            required={required}
+            readOnly={readOnly}
+            autoFocus={autoFocus}
+            aria-label={ariaLabel}
+            aria-describedby={ariaDescribedby}
+            id={id}
+            name={name}
+            style={{width, height}}
+        />)
+  }
 };
