@@ -1,0 +1,133 @@
+.hui-base-accordion {
+    padding: var(--accordion-padding);
+    border: var(--border-thickness) solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.hui-primary-accordion {
+    composes: hui-base-accordion;
+    background-color: var(--background-primary);
+}
+
+.hui-secondary-accordion {
+    composes: hui-base-accordion;
+    background-color: var(--background-secondary);
+}
+
+.hui-tertiary-accordion {
+    composes: hui-base-accordion;
+    background-color: var(--background-tertiary);
+}
+
+.hui-outline-accordion {
+    composes: hui-base-accordion;
+    background-color: transparent;
+}
+
+
+.hui-primary-accordion:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.hui-secondary-accordion:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.hui-tertiary-accordion:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.hui-outline-accordion:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.hui-base-accordion-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 100%;
+    border: var(--border-thickness) solid var(--border-color);
+
+}
+
+
+.hui-primary-accordion-title {
+    composes: hui-base-accordion-title;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+}
+
+.hui-secondary-accordion-title {
+    composes: hui-base-accordion-title;
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+}
+
+.hui-tertiary-accordion-title {
+    composes: hui-base-accordion-title;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-tertiary);
+}
+
+.hui-outline-accordion-title {
+    composes: hui-base-accordion-title;
+    background-color: var(--base-background);
+    color: var(--base-foreground);
+}
+
+
+.hui-primary-accordion-title:hover,
+.hui-secondary-accordion-title:hover,
+.hui-tertiary-accordion-title:hover,
+.hui-outline-accordion-title:hover {
+    color: var(--hover);
+    /*transform: scale(1.02);*/
+}
+
+
+.hui-base-accordion-content {
+    padding: var(--accordion-padding);
+    overflow: hidden;
+    border: var(--border-thickness) solid var(--border-color);
+}
+
+.hui-primary-accordion-content {
+    composes: hui-base-accordion-content;
+    color: var(--foreground-primary);
+    background-color: var(--background-primary);
+}
+
+.hui-secondary-accordion-content {
+    composes: hui-base-accordion-content;
+    color: var(--foreground-secondary);
+    background-color: var(--background-secondary);
+}
+
+
+.hui-tertiary-accordion-content {
+    composes: hui-base-accordion-content;
+    color: var(--foreground-tertiary);
+    background-color: var(--background-tertiary);
+}
+
+
+.hui-outline-accordion-content {
+    composes: hui-base-accordion-content;
+    color: var(--base-foreground);
+    background-color: var(--base-background);
+}
+
+
+.accordion-arrow {
+    font-size: 1rem;
+    color: var(--foreground-primary);
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+    display: inline-block;
+    line-height: 1;
+}

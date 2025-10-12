@@ -936,7 +936,8 @@ var defaultThemes = {
     buttonPadding: "0.5rem 1rem",
     accordionPadding: "0.75rem",
     tabHeight: "48px",
-    linkColor: "#f6f6f6",
+    linkColor: "#1976D2",
+    // Changed to a bold, visible blue
     linkIconSize: "4px",
     fontFamily: "system-ui, -apple-system, sans-serif"
   },
@@ -960,7 +961,8 @@ var defaultThemes = {
     buttonPadding: "0.5rem 1rem",
     accordionPadding: "0.75rem",
     tabHeight: "48px",
-    linkColor: "#42a5f5",
+    linkColor: "#64B5F6",
+    // Brighter blue for dark background
     linkIconSize: "4px",
     fontFamily: "system-ui, -apple-system, sans-serif"
   },
@@ -984,7 +986,8 @@ var defaultThemes = {
     buttonPadding: "0.6rem 1.2rem",
     accordionPadding: "0.85rem",
     tabHeight: "52px",
-    linkColor: "#E74C3C",
+    linkColor: "#C0392B",
+    // Deep red that stands out
     linkIconSize: "4px",
     fontFamily: '"Georgia", "Times New Roman", serif'
   },
@@ -1008,7 +1011,8 @@ var defaultThemes = {
     buttonPadding: "0.5rem 1rem",
     accordionPadding: "0.75rem",
     tabHeight: "50px",
-    linkColor: "#26A69A",
+    linkColor: "#00695C",
+    // Darker teal for better contrast
     linkIconSize: "4px",
     fontFamily: '"Trebuchet MS", "Lucida Sans", sans-serif'
   },
@@ -1033,6 +1037,7 @@ var defaultThemes = {
     accordionPadding: "0.8rem",
     tabHeight: "54px",
     linkColor: "#4CC9F0",
+    // Bright cyan - perfect for neon theme
     linkIconSize: "5px",
     fontFamily: '"Courier New", "Consolas", monospace'
   },
@@ -1056,7 +1061,8 @@ var defaultThemes = {
     buttonPadding: "0.5rem 1rem",
     accordionPadding: "0.75rem",
     tabHeight: "50px",
-    linkColor: "#4CAF50",
+    linkColor: "#2E7D32",
+    // Darker green for visibility
     linkIconSize: "4px",
     fontFamily: '"Verdana", "Geneva", sans-serif'
   }
