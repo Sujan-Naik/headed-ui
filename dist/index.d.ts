@@ -101,7 +101,7 @@ interface TextAreaProps {
     name?: string;
     width?: string | number;
     height?: string | number;
-    markdown: boolean;
+    markdown?: boolean;
 }
 declare const HeadedTextArea: React.FC<TextAreaProps>;
 

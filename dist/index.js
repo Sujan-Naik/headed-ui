@@ -228,8 +228,7 @@ var HeadedInput = (_a) => {
 };
 
 // src/components/unit/interactive/TextArea/headed-text-area.tsx
-import React7 from "react";
-import MDEditor from "@uiw/react-md-editor";
+import React7, { useRef, useEffect } from "react";
 import styles7 from "./headed-text-area.module-27HL4Y2W.module.css";
 var HeadedTextArea = ({
   value,
@@ -252,86 +251,36 @@ var HeadedTextArea = ({
   height,
   markdown = false
 }) => {
-  if (markdown) {
-    const handleMDChange = (val) => {
-      if (onChange) {
-        const syntheticEvent = {
-          target: { value: val || "" }
-        };
-        onChange(syntheticEvent);
-      }
-    };
-    if (onChange) {
-      return /* @__PURE__ */ React7.createElement(
-        MDEditor,
-        {
-          value,
-          onChange: handleMDChange,
-          "data-color-mode": "dark",
-          className,
-          height,
-          style: { width },
-          autoCapitalize: "off"
-        }
-      );
-    } else {
-      return /* @__PURE__ */ React7.createElement(
-        MDEditor,
-        {
-          autoCapitalize: "none",
-          defaultValue: value,
-          "data-color-mode": "dark",
-          className,
-          height,
-          style: { width }
-        }
-      );
+  const textareaRef = useRef(null);
+  useEffect(() => {
+    if (markdown && textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
     }
-  }
-  if (onChange) {
-    return /* @__PURE__ */ React7.createElement(
-      "textarea",
-      {
-        value,
-        onChange,
-        placeholder,
-        className: `${styles7[`hui-${variant}-textarea`]} ${className}`,
-        disabled,
-        rows,
-        cols,
-        maxLength,
-        required,
-        readOnly,
-        autoFocus,
-        "aria-label": ariaLabel,
-        "aria-describedby": ariaDescribedby,
-        id,
-        name,
-        style: { width, height }
-      }
-    );
-  } else {
-    return /* @__PURE__ */ React7.createElement(
-      "textarea",
-      {
-        defaultValue: value,
-        placeholder,
-        className: `${styles7[`hui-${variant}-textarea`]} ${className}`,
-        disabled,
-        rows,
-        cols,
-        maxLength,
-        required,
-        readOnly,
-        autoFocus,
-        "aria-label": ariaLabel,
-        "aria-describedby": ariaDescribedby,
-        id,
-        name,
-        style: { width, height }
-      }
-    );
-  }
+  }, [value, markdown]);
+  return /* @__PURE__ */ React7.createElement(
+    "textarea",
+    {
+      ref: textareaRef,
+      value: onChange ? value : void 0,
+      defaultValue: !onChange ? value : void 0,
+      onChange,
+      placeholder,
+      className: `${styles7[`hui-${variant}-textarea`]} ${markdown ? styles7["markdown-mode"] : ""} ${className}`,
+      disabled,
+      rows,
+      cols,
+      maxLength,
+      required,
+      readOnly,
+      autoFocus,
+      "aria-label": ariaLabel,
+      "aria-describedby": ariaDescribedby,
+      id,
+      name,
+      style: { width, height, fontFamily: markdown ? "monospace" : void 0 }
+    }
+  );
 };
 
 // src/components/unit/navigation/Link/headed-link.tsx
@@ -430,7 +379,7 @@ var HeadedTabs = ({ tabs, children, onClick, variant = "primary" /* Primary */ }
 };
 
 // src/components/unit/content/TextAnim/headed-text-anim.tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect as useEffect2 } from "react";
 import React14 from "react";
 import styles14 from "./headed-text-anim.module-YOFOWGU6.module.css";
 var TextAnimationType = /* @__PURE__ */ ((TextAnimationType2) => {
@@ -454,7 +403,7 @@ var HeadedTextAnim = ({
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const fullText = typeof children === "string" ? children : "";
-  useEffect(() => {
+  useEffect2(() => {
     const delayTimer = setTimeout(() => {
       switch (animation) {
         case "typewriter" /* TYPEWRITER */:
@@ -909,7 +858,7 @@ var HeadedTimeline = ({ variant, events }) => {
 };
 
 // src/ThemeProvider.tsx
-import React25, { createContext, useContext, useState as useState5, useEffect as useEffect2 } from "react";
+import React25, { createContext, useContext, useState as useState5, useEffect as useEffect3 } from "react";
 
 // src/themes.ts
 var defaultThemes = {
@@ -1079,11 +1028,11 @@ var ThemeProvider = ({
 }) => {
   const allThemes = __spreadValues(__spreadValues({}, defaultThemes), customThemes);
   const [theme, setTheme] = useState5(initialTheme);
-  useEffect2(() => {
+  useEffect3(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme && allThemes[savedTheme]) setTheme(savedTheme);
   }, []);
-  useEffect2(() => {
+  useEffect3(() => {
     const currentTheme = allThemes[theme];
     if (currentTheme) {
       const root = document.documentElement;

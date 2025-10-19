@@ -1,7 +1,5 @@
 'use client'
-
-import React from 'react';
-import MDEditor from '@uiw/react-md-editor';
+import React, { useRef, useEffect } from 'react';
 import styles from './headed-text-area.module.css';
 import {VariantEnum} from '../../../variants';
 
@@ -24,7 +22,7 @@ interface TextAreaProps {
   name?: string;
   width?: string | number;
   height?: string | number;
-  markdown: boolean;
+  markdown?: boolean;
 }
 
 export const HeadedTextArea: React.FC<TextAreaProps> = ({
@@ -45,83 +43,39 @@ export const HeadedTextArea: React.FC<TextAreaProps> = ({
   id,
   name,
   width,
-    height,
+  height,
   markdown = false
 }) => {
-  if (markdown) {
-    const handleMDChange = (val?: string) => {
-      if (onChange) {
-        const syntheticEvent = {
-          target: { value: val || '' }
-        } as React.ChangeEvent<HTMLTextAreaElement>;
-        onChange(syntheticEvent);
-      }
-    };
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-    if (onChange) {
-      return (
-          <MDEditor
-              value={value}
-              onChange={handleMDChange}
-              data-color-mode="dark"
-              className={className}
-              height={height}
-              style={{width}}
-              autoCapitalize={'off'}
-          />
-      );
-    } else {
-      return (<MDEditor
-                        autoCapitalize={'none'}
-
-              defaultValue={value}
-              data-color-mode="dark"
-              className={className}
-              height={height}
-              style={{width}}
-          />)
+  // Auto-resize for markdown mode
+  useEffect(() => {
+    if (markdown && textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
     }
-  }
+  }, [value, markdown]);
 
-  if (onChange) {
-    return (
-
-        <textarea
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-            className={`${styles[`hui-${variant}-textarea`]} ${className}`}
-            disabled={disabled}
-            rows={rows}
-            cols={cols}
-            maxLength={maxLength}
-            required={required}
-            readOnly={readOnly}
-            autoFocus={autoFocus}
-            aria-label={ariaLabel}
-            aria-describedby={ariaDescribedby}
-            id={id}
-            name={name}
-            style={{width, height}}
-        />
-    );
-  } else {
-    return (<textarea
-            defaultValue={value}
-            placeholder={placeholder}
-            className={`${styles[`hui-${variant}-textarea`]} ${className}`}
-            disabled={disabled}
-            rows={rows}
-            cols={cols}
-            maxLength={maxLength}
-            required={required}
-            readOnly={readOnly}
-            autoFocus={autoFocus}
-            aria-label={ariaLabel}
-            aria-describedby={ariaDescribedby}
-            id={id}
-            name={name}
-            style={{width, height}}
-        />)
-  }
+  return (
+    <textarea
+      ref={textareaRef}
+      value={onChange ? value : undefined}
+      defaultValue={!onChange ? value : undefined}
+      onChange={onChange}
+      placeholder={placeholder}
+      className={`${styles[`hui-${variant}-textarea`]} ${markdown ? styles['markdown-mode'] : ''} ${className}`}
+      disabled={disabled}
+      rows={rows}
+      cols={cols}
+      maxLength={maxLength}
+      required={required}
+      readOnly={readOnly}
+      autoFocus={autoFocus}
+      aria-label={ariaLabel}
+      aria-describedby={ariaDescribedby}
+      id={id}
+      name={name}
+      style={{width, height, fontFamily: markdown ? 'monospace' : undefined}}
+    />
+  );
 };
