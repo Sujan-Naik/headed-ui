@@ -1,27 +1,23 @@
 'use client'
 
 import React from 'react';
-import Link, {LinkProps} from 'next/link';
 import styles from './headed-link.module.css';
 import {VariantEnum} from "@/components/variants";
 
-interface PrimaryLinkProps extends LinkProps {
-    className?: string;
+interface HeadedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     children: React.ReactNode;
-    onClick?: () => void;
     variant: VariantEnum;
 }
 
-export const HeadedLink: React.FC<PrimaryLinkProps> = ({
-                                                           children,
-                                                           className,
-                                                           onClick,
-                                                           variant,
-                                                           ...props
-                                                       }) => {
+export const HeadedLink: React.FC<HeadedLinkProps> = ({
+    children,
+    className,
+    variant,
+    ...props
+}) => {
     return (
-        <Link {...props} className={`${styles[`hui-${variant}-link`]} ${className ?? ''}`} onClick={onClick}>
+        <a {...props} className={`${styles[`hui-${variant}-link`]} ${className ?? ''}`}>
             {children}
-        </Link>
+        </a>
     );
 };

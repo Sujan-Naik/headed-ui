@@ -1,5 +1,4 @@
 import React, { ChangeEventHandler, MouseEventHandler, ReactNode } from 'react';
-import { LinkProps } from 'next/link';
 
 declare enum VariantEnum {
     Primary = "primary",
@@ -106,13 +105,11 @@ interface TextAreaProps {
 }
 declare const HeadedTextArea: React.FC<TextAreaProps>;
 
-interface PrimaryLinkProps extends LinkProps {
-    className?: string;
+interface HeadedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     children: React.ReactNode;
-    onClick?: () => void;
     variant: VariantEnum;
 }
-declare const HeadedLink: React.FC<PrimaryLinkProps>;
+declare const HeadedLink: React.FC<HeadedLinkProps>;
 
 interface HeadedModalProps {
     isOpen: boolean;

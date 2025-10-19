@@ -42,7 +42,7 @@ var VariantEnum = /* @__PURE__ */ ((VariantEnum2) => {
 // src/components/unit/content/Accordion/headed-accordion.tsx
 import React from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
-import styles from "./headed-accordion.module-XQJOD7EB.module.css";
+import styles from "./headed-accordion.module-2ZVEEETE.module.css";
 var AccordionItem = ({ title, children, variant }) => /* @__PURE__ */ React.createElement(Disclosure, null, ({ open }) => /* @__PURE__ */ React.createElement("div", { className: `${styles[`hui-${variant}-accordion`]} ${open ? styles[`open`] : ""}`, style: {
   flexDirection: "column",
   alignItems: "center",
@@ -55,7 +55,7 @@ var HeadedAccordion = ({ children }) => {
 // src/components/unit/interactive/Button/headed-button.tsx
 import { Button } from "@headlessui/react";
 import React2 from "react";
-import styles2 from "./headed-button.module-HCCTWVQY.module.css";
+import styles2 from "./headed-button.module-VJCGU42P.module.css";
 var HeadedButton = ({
   children,
   onClick,
@@ -92,7 +92,7 @@ var HeadedButton = ({
 
 // src/components/unit/content/Card/headed-card.tsx
 import React3 from "react";
-import styles3 from "./headed-card.module-7UYFQ556.module.css";
+import styles3 from "./headed-card.module-TCXEUJCX.module.css";
 var HeadedCard = ({
   width,
   height,
@@ -114,7 +114,7 @@ var HeadedCard = ({
 // src/components/unit/overlays/Dialog/headed-dialog.tsx
 import React4 from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
-import styles4 from "./headed-dialog.module-CSSLP4FQ.module.css";
+import styles4 from "./headed-dialog.module-TZN36ZZR.module.css";
 var HeadedDialog = ({ isOpen, onClick, title, children, variant, position }) => {
   const getPositionStyles = (pos) => {
     const baseStyles = {
@@ -187,7 +187,7 @@ var HeadedDialog = ({ isOpen, onClick, title, children, variant, position }) => 
 // src/components/unit/overlays/Dropdown/headed-dropdown.tsx
 import React5 from "react";
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
-import styles5 from "./headed-dropdown.module-PL3LSUAN.module.css";
+import styles5 from "./headed-dropdown.module-RNRUDTRR.module.css";
 var HeadedDropdown = ({ options, horizontal, selected, onChange, variant }) => {
   return /* @__PURE__ */ React5.createElement(Listbox, { horizontal, value: selected, onChange }, /* @__PURE__ */ React5.createElement("div", { className: "relative" }, /* @__PURE__ */ React5.createElement(ListboxButton, { className: styles5[`hui-${variant}-dropdown-button`] }, selected), /* @__PURE__ */ React5.createElement(ListboxOptions, { className: "absolute z-10", style: {
     display: "flex",
@@ -207,7 +207,7 @@ var HeadedDropdown = ({ options, horizontal, selected, onChange, variant }) => {
 
 // src/components/unit/interactive/Input/headed-input.tsx
 import React6 from "react";
-import styles6 from "./headed-input.module-NX5NXN6J.module.css";
+import styles6 from "./headed-input.module-ANJN762W.module.css";
 var HeadedInput = (_a) => {
   var _b = _a, {
     onChange,
@@ -230,7 +230,7 @@ var HeadedInput = (_a) => {
 // src/components/unit/interactive/TextArea/headed-text-area.tsx
 import React7 from "react";
 import MDEditor from "@uiw/react-md-editor";
-import styles7 from "./headed-text-area.module-IBSY2BL6.module.css";
+import styles7 from "./headed-text-area.module-27HL4Y2W.module.css";
 var HeadedTextArea = ({
   value,
   onChange,
@@ -336,34 +336,31 @@ var HeadedTextArea = ({
 
 // src/components/unit/navigation/Link/headed-link.tsx
 import React8 from "react";
-import Link from "next/link";
-import styles8 from "./headed-link.module-US5OGH4P.module.css";
+import styles8 from "./headed-link.module-QBQQVGQ7.module.css";
 var HeadedLink = (_a) => {
   var _b = _a, {
     children,
     className,
-    onClick,
     variant
   } = _b, props = __objRest(_b, [
     "children",
     "className",
-    "onClick",
     "variant"
   ]);
-  return /* @__PURE__ */ React8.createElement(Link, __spreadProps(__spreadValues({}, props), { className: `${styles8[`hui-${variant}-link`]} ${className != null ? className : ""}`, onClick }), children);
+  return /* @__PURE__ */ React8.createElement("a", __spreadProps(__spreadValues({}, props), { className: `${styles8[`hui-${variant}-link`]} ${className != null ? className : ""}` }), children);
 };
 
 // src/components/unit/overlays/Modal/headed-modal.tsx
 import React9 from "react";
 import { Dialog as Dialog2 } from "@headlessui/react";
-import styles9 from "./headed-modal.module-IAQREMUA.module.css";
+import styles9 from "./headed-modal.module-EMRSS4UK.module.css";
 var HeadedModal = ({ isOpen, onClose, title, children, variant }) => {
   return /* @__PURE__ */ React9.createElement(Dialog2, { open: isOpen, onClose, className: styles9[`hui-${variant}-modal`] }, /* @__PURE__ */ React9.createElement("div", { className: styles9[`hui-${variant}-modal-panel`] }, /* @__PURE__ */ React9.createElement(Dialog2.Title, { className: styles9[`hui-${variant}-modal-title`] }, title), children, /* @__PURE__ */ React9.createElement(HeadedButton, { variant, onClick: onClose }, "Close")));
 };
 
 // src/components/unit/overlays/Popover/headed-popover.tsx
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import styles10 from "./headed-popover.module-PW2BTQBJ.module.css";
+import styles10 from "./headed-popover.module-R7JIDXXG.module.css";
 import React10 from "react";
 function HeadedPopover({ title, children, variant }) {
   return /* @__PURE__ */ React10.createElement(Popover, { className: "relative" }, /* @__PURE__ */ React10.createElement(PopoverButton, { className: `${styles10[`hui-${variant}-popover-button`]}` }, title), /* @__PURE__ */ React10.createElement(PopoverPanel, { anchor: "bottom", className: `${styles10[`hui-${variant}-popover-panel`]} flex flex-col` }, children));
@@ -372,7 +369,7 @@ function HeadedPopover({ title, children, variant }) {
 // src/components/unit/content/Select/headed-select.tsx
 import { Description, Field, Label, Select } from "@headlessui/react";
 import React11 from "react";
-import styles11 from "./headed-select.module-AOTXMAQC.module.css";
+import styles11 from "./headed-select.module-CYN5GWVH.module.css";
 var HeadedSelect = ({
   options,
   label,
@@ -406,7 +403,7 @@ var HeadedSelect = ({
 // src/components/unit/interactive/Switch/headed-switch.tsx
 import { Switch } from "@headlessui/react";
 import React12 from "react";
-import styles12 from "./headed-switch.module-RHD66WUN.module.css";
+import styles12 from "./headed-switch.module-UMTBOS57.module.css";
 var HeadedSwitch = ({
   checked,
   onChange,
@@ -427,7 +424,7 @@ var HeadedSwitch = ({
 // src/components/unit/content/Tabs/headed-tabs.tsx
 import React13 from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import styles13 from "./headed-tabs.module-Q2DDZXN6.module.css";
+import styles13 from "./headed-tabs.module-PA5VG7YH.module.css";
 var HeadedTabs = ({ tabs, children, onClick, variant = "primary" /* Primary */ }) => {
   return /* @__PURE__ */ React13.createElement(TabGroup, null, /* @__PURE__ */ React13.createElement(TabList, { className: styles13[`hui-${variant}-tabs`] }, tabs.map((tab, index) => /* @__PURE__ */ React13.createElement(Tab, { key: index, className: styles13[`hui-${variant}-tab`], onClick }, tab))), /* @__PURE__ */ React13.createElement(TabPanels, null, children.map((content, index) => /* @__PURE__ */ React13.createElement(TabPanel, { key: index, className: styles13[`hui-${variant}-panel`] }, content))));
 };
@@ -435,7 +432,7 @@ var HeadedTabs = ({ tabs, children, onClick, variant = "primary" /* Primary */ }
 // src/components/unit/content/TextAnim/headed-text-anim.tsx
 import { useState, useEffect } from "react";
 import React14 from "react";
-import styles14 from "./headed-text-anim.module-JLVDERQ5.module.css";
+import styles14 from "./headed-text-anim.module-YOFOWGU6.module.css";
 var TextAnimationType = /* @__PURE__ */ ((TextAnimationType2) => {
   TextAnimationType2["TYPEWRITER"] = "typewriter";
   TextAnimationType2["FADE_IN"] = "fade-in";
@@ -513,7 +510,7 @@ var HeadedTextAnim = ({
 
 // src/components/unit/overlays/Toast/headed-toast.tsx
 import React15 from "react";
-import styles15 from "./headed-toast.module-NCOECBPH.module.css";
+import styles15 from "./headed-toast.module-PTFHPD6I.module.css";
 var PositionEnum = /* @__PURE__ */ ((PositionEnum2) => {
   PositionEnum2["CENTER"] = "center";
   PositionEnum2["TOP"] = "top";
@@ -843,7 +840,7 @@ var HeadedGrid = ({
 
 // src/components/nested/milestones/Progress/headed-progress.tsx
 import React21 from "react";
-import styles16 from "./headed-progress.module-6PIITCGR.module.css";
+import styles16 from "./headed-progress.module-6KUIGFBS.module.css";
 var HeadedProgress = ({
   progress,
   className = "",
